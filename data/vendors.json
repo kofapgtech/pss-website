@@ -1,0 +1,65 @@
+[
+  {
+    "id": "vnd-community-crafts",
+    "name": "Community Crafts",
+    "description": "Handmade bags and home goods crafted by South Side artisans.",
+    "category": "Art & Prints",
+    "seed": "community-crafts",
+    "published": true,
+    "createdAt": "2026-08-15T09:00:00.000Z"
+  },
+  {
+    "id": "vnd-queer-wares",
+    "name": "Queer Wares",
+    "description": "Pins, stickers, and small-batch accessories celebrating queer joy.",
+    "category": "Art & Prints",
+    "seed": "queer-wares",
+    "published": true,
+    "createdAt": "2026-08-15T09:05:00.000Z"
+  },
+  {
+    "id": "vnd-rooted-apothecary",
+    "name": "Rooted Apothecary",
+    "description": "Small-batch botanical skincare made with organic, locally sourced ingredients.",
+    "category": "Wellness & Care",
+    "seed": "rooted-apothecary",
+    "published": true,
+    "createdAt": "2026-08-15T09:10:00.000Z"
+  },
+  {
+    "id": "vnd-porch-press",
+    "name": "Porch Press",
+    "description": "Independent zines and short-run publishing from South Side storytellers.",
+    "category": "Publishing",
+    "seed": "porch-press",
+    "published": true,
+    "createdAt": "2026-08-15T09:15:00.000Z"
+  },
+  {
+    "id": "vnd-south-side-ceramics",
+    "name": "South Side Ceramics",
+    "description": "Hand-thrown, hand-painted ceramics in bold, joyful colorways.",
+    "category": "Art & Prints",
+    "seed": "south-side-ceramics",
+    "published": true,
+    "createdAt": "2026-08-15T09:20:00.000Z"
+  },
+  {
+    "id": "vnd-inclusive-apparel-co",
+    "name": "Inclusive Apparel Co.",
+    "description": "Premium, size-inclusive everyday apparel for the whole community.",
+    "category": "Apparel",
+    "seed": "inclusive-apparel",
+    "published": true,
+    "createdAt": "2026-08-15T09:25:00.000Z"
+  },
+  {
+    "id": "vnd-bronzeville-botanicals",
+    "name": "Bronzeville Botanicals",
+    "description": "Wellness oils and apothecary sets rooted in South Side herbal traditions.",
+    "category": "Wellness & Care",
+    "seed": "bronzeville-botanicals",
+    "published": true,
+    "createdAt": "2026-08-15T09:30:00.000Z"
+  }
+]

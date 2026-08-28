@@ -1,0 +1,72 @@
+[
+  {
+    "id": "prd-south-side-tote",
+    "vendorId": "vnd-community-crafts",
+    "name": "South Side Tote",
+    "price": 25,
+    "category": "Art & Prints",
+    "seed": "south-side-tote",
+    "published": true,
+    "createdAt": "2026-08-15T09:01:00.000Z"
+  },
+  {
+    "id": "prd-pride-pin-set",
+    "vendorId": "vnd-queer-wares",
+    "name": "Pride Pin Set",
+    "price": 15,
+    "category": "Art & Prints",
+    "seed": "pride-pin-set",
+    "published": true,
+    "createdAt": "2026-08-15T09:06:00.000Z"
+  },
+  {
+    "id": "prd-botanical-balm",
+    "vendorId": "vnd-rooted-apothecary",
+    "name": "Botanical Balm",
+    "price": 30,
+    "category": "Wellness & Care",
+    "seed": "botanical-balm",
+    "published": true,
+    "createdAt": "2026-08-15T09:11:00.000Z"
+  },
+  {
+    "id": "prd-stories-zine-vol-1",
+    "vendorId": "vnd-porch-press",
+    "name": "Stories Zine Vol. 1",
+    "price": 12,
+    "category": "Publishing",
+    "seed": "stories-zine",
+    "published": true,
+    "createdAt": "2026-08-15T09:16:00.000Z"
+  },
+  {
+    "id": "prd-pride-flow-mug",
+    "vendorId": "vnd-south-side-ceramics",
+    "name": "Pride Flow Mug",
+    "price": 45,
+    "category": "Art & Prints",
+    "seed": "pride-flow-mug",
+    "published": true,
+    "createdAt": "2026-08-15T09:21:00.000Z"
+  },
+  {
+    "id": "prd-everyday-heavy-tee",
+    "vendorId": "vnd-inclusive-apparel-co",
+    "name": "Everyday Heavy Tee",
+    "price": 32,
+    "category": "Apparel",
+    "seed": "everyday-heavy-tee",
+    "published": true,
+    "createdAt": "2026-08-15T09:26:00.000Z"
+  },
+  {
+    "id": "prd-restoration-oil-set",
+    "vendorId": "vnd-bronzeville-botanicals",
+    "name": "Restoration Oil Set",
+    "price": 28,
+    "category": "Wellness & Care",
+    "seed": "restoration-oil-set",
+    "published": true,
+    "createdAt": "2026-08-15T09:31:00.000Z"
+  }
+]
