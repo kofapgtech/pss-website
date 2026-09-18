@@ -30,14 +30,46 @@ Membership is free and equals having an account. Signing up creates an
 
 Members can:
 
+- sign up with email, Google, or Apple, and log in or reset a password
 - post to the community feed and comment on other members' posts
 - delete their own posts
 - edit their display name, pronouns, neighborhood, and bio
-- see the healthcare directory and member marketplace pricing
+- browse the healthcare directory, filtered by concern, as a list and a map
+- see their discounts, add a coupon to Apple Wallet, and open a redeem link
+- see participating vendors as a list and a map
 
 Logged-out visitors get the marketing pages, the public events calendar,
 and the event-submission form. They cannot read the feed or the member
 directory — that is enforced by Row Level Security, not by the UI.
+
+### Sign-in providers
+
+Email works today. **Google and Apple do not yet** — the buttons are
+built and call `signInWithOAuth`, but both providers must be enabled with
+their credentials in the Supabase dashboard (Authentication → Providers)
+before they will do anything. Until then the buttons show a message
+pointing at email rather than sending anyone to a broken redirect; the
+test suite covers that path.
+
+Google needs an OAuth client from Google Cloud Console. Apple needs a
+Services ID and key from the Apple Developer portal.
+
+### Apple Wallet
+
+`coupons.wallet_pass_url` holds the URL of a signed `.pkpass` file, and
+the hub shows an **Add to Apple Wallet** button only when that column is
+set. Nothing generates passes yet: signing one requires an Apple
+Developer Pass Type ID certificate and a server-side signer (an edge
+function would be the natural home). Coupons without a pass say
+"Apple Wallet pass coming soon!" and still offer their redeem link.
+
+### Maps
+
+Leaflet with OpenStreetMap tiles — no API key or account. Both the care
+directory and the vendor list render a map beside them, pinning only rows
+that have both `latitude` and `longitude`. A provider or vendor with no
+coordinates still appears in the list; the map says how many locations it
+is showing.
 
 ### Backend
 
@@ -46,10 +78,17 @@ Connection values live in `assets/js/config.js`. The key there is the
 *publishable* key, which is designed to ship in a browser — RLS is what
 protects the data. **Never put the `service_role` key in this repo.**
 
-Schema and policies are in `supabase/migrations/`. The RLS policies were
-exercised against the live database with a 15-assertion test covering
-sign-up, posting, cross-member tampering, and anonymous access; all
-passed and the transaction was rolled back.
+Schema and policies are in `supabase/migrations/`.
+
+## Tests
+
+```sh
+npm install && npm test
+```
+
+83 browser checks in `tests/lovewell.test.js` plus 29 Row Level Security
+assertions in `tests/rls/`. See `tests/README.md` for what each covers
+and how to run the SQL suites. All currently pass.
 
 Supabase's security linter reports one remaining warning: `is_moderator()`
 is executable by signed-in users. That is deliberate and required — the
@@ -95,8 +134,12 @@ build step is required either way.
 | Shop, prompts login at checkout | Stub. Guests see "Sign in to buy"; member pricing is modelled in the schema |
 | Lovewell: become a member, log in | **Built and tested** |
 | Lovewell: social community hub (posting) | **Built and tested** |
+| Lovewell: sign in with Google / Apple | Buttons and code built; **providers not yet configured in Supabase** |
 | Lovewell: marketplace discounts | Surfaced in the UI; applies once products exist |
-| Lovewell: healthcare directory | Built, reads from `health_providers`; empty, shows "Healthcare providers coming soon!" |
+| Lovewell: healthcare directory | Built with concern filters and a map; table empty, shows "Healthcare providers coming soon!" |
+| Lovewell: member coupons + redeem links | Built; `coupons` table empty |
+| Lovewell: Apple Wallet passes | Button built and tested; **no pass signer exists yet** |
+| Lovewell: participating vendor map | Built; `vendors` table empty |
 | Lovewell: de-emphasised healthcare | Directory only, no clinical/reimbursement features |
 | Partner tiers (Directory of Services, Storytelling) | Described on `lovewell.html`; `partner_orgs` table exists, no sign-up flow |
 | Front Porch Media | Stub, as specified for the first iteration |

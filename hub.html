@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Member Hub — Lovewell | Pride South Side</title>
-<meta name="description" content="The Lovewell Social Community Hub: share posts, find events, browse the community healthcare directory, and connect with neighbors.">
+<meta name="description" content="The Lovewell Member Hub: share posts, find queer-affirming care near you, and use your member discounts at participating vendors.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='75.25' cy='13.75' r='12.5' fill='%23FFDD19'/%3E%3Ccircle cx='35.25' cy='20.25' r='11.5' fill='%23FCB042'/%3E%3Ccircle cx='13.75' cy='39.25' r='11.25' fill='%23ED1C24'/%3E%3Ccircle cx='15.5' cy='66.75' r='11.25' fill='%237F4097'/%3E%3Ccircle cx='42.25' cy='85.5' r='11.5' fill='%231A75BC'/%3E%3Ccircle cx='86.25' cy='86.25' r='11.75' fill='%2300A14B'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -16,6 +16,8 @@
 <script src="assets/js/config.js"></script>
 <script src="assets/js/auth.js"></script>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
 <a class="skip-link bg-primary text-on-primary px-4 py-2 rounded-md z-[100] fixed top-2 left-2" href="#main">Skip to content</a>
 
@@ -32,8 +34,8 @@
 <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="media.html">The Front Porch</a>
 </nav>
 <div class="flex items-center gap-3">
-<a hidden data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
-<a hidden data-auth-only class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="hub.html">
+<a data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
+<a data-auth-only class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="hub.html">
 <span class="material-symbols-outlined text-[18px]" aria-hidden="true">group</span>
 <span class="hidden sm:inline">Member Hub</span>
 </a>
@@ -41,18 +43,15 @@
 </header>
 <main id="main" class="pt-20">
 
-<!-- Shown while the session is still resolving, so the hub never flashes
-     member content at a signed-out visitor. -->
 <section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap" id="hub-loading">
 <p class="max-w-container-max mx-auto font-body-lg text-body-lg text-on-surface-variant">Loading your hub…</p>
 </section>
 
-<!-- Signed out -->
 <section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low" id="hub-gate" hidden>
 <div class="max-w-3xl mx-auto text-center">
 <span class="material-symbols-outlined text-primary text-5xl mb-4 block" aria-hidden="true">lock</span>
 <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">The Member Hub is for Lovewell members</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Membership is free. Create an account to share posts, find events, and connect with neighbors.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Membership is free. Create an account to share posts, find affirming care near you, and use your member discounts.</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
 <a class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="join.html?next=hub.html">Become a Member</a>
 <a class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors" href="join.html?next=hub.html&amp;mode=signin">Log in</a>
@@ -60,10 +59,9 @@
 </div>
 </section>
 
-<!-- Signed in -->
 <div id="hub-content" hidden>
 
-<section class="w-full px-margin-mobile md:px-margin-desktop pt-12 pb-8 bg-surface-container-low">
+<section class="w-full px-margin-mobile md:px-margin-desktop pt-12 pb-6 bg-surface-container-low">
 <div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
 <div>
 <p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-2">Lovewell Member Hub</p>
@@ -76,10 +74,21 @@
 </div>
 </section>
 
-<section class="w-full px-margin-mobile md:px-margin-desktop pb-section-gap bg-surface-container-low">
-<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Section tabs -->
+<div class="w-full px-margin-mobile md:px-margin-desktop bg-surface-container-low border-b border-outline-variant sticky top-20 z-40">
+<div class="max-w-container-max mx-auto flex gap-1 overflow-x-auto" role="tablist" aria-label="Member hub sections">
+<button class="px-5 py-3 font-label-sm text-label-sm whitespace-nowrap border-b-2 transition-colors" role="tab" id="tab-community" aria-controls="panel-community" data-tab="community">Community</button>
+<button class="px-5 py-3 font-label-sm text-label-sm whitespace-nowrap border-b-2 transition-colors" role="tab" id="tab-care" aria-controls="panel-care" data-tab="care">Find care</button>
+<button class="px-5 py-3 font-label-sm text-label-sm whitespace-nowrap border-b-2 transition-colors" role="tab" id="tab-discounts" aria-controls="panel-discounts" data-tab="discounts">Discounts &amp; vendors</button>
+<button class="px-5 py-3 font-label-sm text-label-sm whitespace-nowrap border-b-2 transition-colors" role="tab" id="tab-profile" aria-controls="panel-profile" data-tab="profile">Profile</button>
+</div>
+</div>
 
-<!-- Community feed -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+
+<!-- ============ Community ============ -->
+<div id="panel-community" role="tabpanel" aria-labelledby="tab-community" class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <div class="lg:col-span-8 flex flex-col gap-6">
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
 <h2 class="font-headline-md text-headline-md text-on-background text-xl mb-4">Share with the community</h2>
@@ -93,7 +102,6 @@
 <p class="font-body-md text-sm text-on-surface-variant" id="post-status" role="status"></p>
 </form>
 </div>
-
 <div class="flex items-center justify-between">
 <h2 class="font-headline-md text-headline-md text-on-background text-xl">Community feed</h2>
 <button class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1" id="refresh-feed" type="button">
@@ -102,28 +110,7 @@
 </div>
 <div class="flex flex-col gap-4" id="feed"></div>
 </div>
-
-<!-- Member sidebar -->
 <aside class="lg:col-span-4 flex flex-col gap-gutter">
-
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
-<div class="flex items-center gap-3 mb-3">
-<span class="material-symbols-outlined text-pride-yellow text-2xl" aria-hidden="true">local_offer</span>
-<h2 class="font-headline-md text-headline-md text-on-background text-lg">Marketplace discounts</h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Your member discount applies automatically across all products listed on the Pride South Side Marketplace while you're logged in.</p>
-<a class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1" href="shop.html">Visit the marketplace <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
-</div>
-
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
-<div class="flex items-center gap-3 mb-3">
-<span class="material-symbols-outlined text-pride-green text-2xl" aria-hidden="true">local_hospital</span>
-<h2 class="font-headline-md text-headline-md text-on-background text-lg">Healthcare directory</h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Local Federally Qualified Health Centers (FQHCs) and trusted, queer-affirming clinics near you.</p>
-<div id="providers"></div>
-</div>
-
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
 <div class="flex items-center gap-3 mb-3">
 <span class="material-symbols-outlined text-pride-orange text-2xl" aria-hidden="true">confirmation_number</span>
@@ -133,14 +120,61 @@
 <p class="font-body-md text-body-md text-on-surface-variant mb-4"><strong>Member event perks coming soon!</strong></p>
 <a class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1" href="events.html">See the community calendar <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
 </div>
-
-<!-- Profile -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-pride-purple text-2xl" aria-hidden="true">badge</span>
-<h2 class="font-headline-md text-headline-md text-on-background text-lg">Your profile</h2>
+</aside>
 </div>
-<form class="flex flex-col gap-4" id="profile-form">
+
+<!-- ============ Find care ============ -->
+<div id="panel-care" role="tabpanel" aria-labelledby="tab-care" hidden>
+<div class="max-w-3xl mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-3">Find care near you</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Local Federally Qualified Health Centers (FQHCs) and trusted, queer-affirming clinics. Filter by what you're looking for.</p>
+</div>
+
+<div class="mb-6">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-3">Filter by concern</h3>
+<div class="flex flex-wrap gap-2" id="care-filters" role="group" aria-label="Filter providers by concern"></div>
+</div>
+
+<p class="font-body-md text-body-md text-on-surface-variant mb-4" id="care-count" role="status"></p>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div id="providers" class="flex flex-col gap-4"></div>
+<div>
+<div class="rounded-xl border border-outline-variant overflow-hidden bg-surface-container-lowest sticky top-40">
+<div id="care-map" class="w-full h-[420px] bg-surface-variant"></div>
+<p class="font-body-md text-xs text-on-surface-variant p-3" id="care-map-note"></p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ============ Discounts & vendors ============ -->
+<div id="panel-discounts" role="tabpanel" aria-labelledby="tab-discounts" hidden>
+<div class="max-w-3xl mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-3">Your member discounts</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Lovewell members get discounts at participating vendors. Add a coupon to Apple Wallet, or open it to redeem in person or online.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12" id="coupons"></div>
+
+<h2 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Participating vendors</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6" id="vendor-count" role="status"></p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div id="vendors" class="flex flex-col gap-4"></div>
+<div>
+<div class="rounded-xl border border-outline-variant overflow-hidden bg-surface-container-lowest">
+<div id="vendor-map" class="w-full h-[420px] bg-surface-variant"></div>
+<p class="font-body-md text-xs text-on-surface-variant p-3" id="vendor-map-note"></p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ============ Profile ============ -->
+<div id="panel-profile" role="tabpanel" aria-labelledby="tab-profile" hidden>
+<div class="max-w-xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-6">Your profile</h2>
+<form class="flex flex-col gap-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6" id="profile-form">
 <div>
 <label class="block font-label-sm text-label-sm mb-2" for="pf-name">Display name</label>
 <input class="field" id="pf-name" name="display_name" required maxlength="80" type="text">
@@ -161,8 +195,8 @@
 <p class="font-body-md text-sm text-on-surface-variant" id="profile-status" role="status"></p>
 </form>
 </div>
+</div>
 
-</aside>
 </div>
 </section>
 </div>
