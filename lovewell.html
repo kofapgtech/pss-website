@@ -3,253 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lovewell Loyalty &amp; Healthcare — Pride South Side</title>
-<meta name="description" content="Lovewell is Pride South Side's free loyalty and healthcare access program — telehealth, medication access, wellness checks, and shop rewards for the South Side community.">
+<title>Lovewell Membership Program — Pride South Side</title>
+<meta name="description" content="Connect. Support. Thrive. Lovewell brings health and cultural resources to the greater South and Southwest Side of Chicago. Become a member for marketplace discounts, event perks, a community hub, and a healthcare directory.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='75.25' cy='13.75' r='12.5' fill='%23FFDD19'/%3E%3Ccircle cx='35.25' cy='20.25' r='11.5' fill='%23FCB042'/%3E%3Ccircle cx='13.75' cy='39.25' r='11.25' fill='%23ED1C24'/%3E%3Ccircle cx='15.5' cy='66.75' r='11.25' fill='%237F4097'/%3E%3Ccircle cx='42.25' cy='85.5' r='11.5' fill='%231A75BC'/%3E%3Ccircle cx='86.25' cy='86.25' r='11.75' fill='%2300A14B'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Fredoka:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "on-primary": "#ffffff", "surface-tint": "#145a82", "on-tertiary": "#ffffff",
-        "on-background": "#16181c", "surface-container-lowest": "#ffffff", "surface-variant": "#e4e4e7",
-        "secondary-container": "#ff6b61", "primary-fixed-dim": "#7cc1ea", "on-tertiary-fixed-variant": "#653e00",
-        "on-secondary-fixed": "#5c0a08", "secondary": "#e31e24", "on-primary-fixed": "#0b3b57",
-        "on-tertiary-container": "#fffbff", "tertiary-container": "#a65d00", "surface-container-high": "#e8e8e8",
-        "on-surface-variant": "#52525b", "on-tertiary-fixed": "#2a1700", "primary-fixed": "#dceefb",
-        "error-container": "#ffdad6", "on-secondary-fixed-variant": "#a3241b", "tertiary-fixed-dim": "#ffb95f",
-        "on-error-container": "#93000a", "secondary-fixed": "#ffd9d6", "primary": "#1a75bc",
-        "surface-dim": "#e0e0e0", "inverse-primary": "#7cc1ea", "surface": "#fafafa", "outline": "#71717a",
-        "on-primary-container": "#fffbff", "on-secondary-container": "#7a1410", "background": "#fafafa",
-        "tertiary-fixed": "#fbe4c0", "inverse-surface": "#23252b", "surface-bright": "#fafafa",
-        "on-primary-fixed-variant": "#145a82", "on-error": "#ffffff", "on-secondary": "#ffffff",
-        "inverse-on-surface": "#f4f4f5", "secondary-fixed-dim": "#ffb0cd", "surface-container-highest": "#e0e0e0",
-        "error": "#ba1a1a", "on-surface": "#16181c", "surface-container-low": "#f5f5f5", "tertiary": "#a65d00",
-        "outline-variant": "#d4d4d8", "surface-container": "#f0f0f0", "primary-container": "#3b93ce"
-      },
-      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
-      spacing: { base: "8px", gutter: "24px", "margin-desktop": "48px", "section-gap": "80px", "container-max": "1280px", "margin-mobile": "16px" },
-      fontFamily: {
-        "headline-lg-mobile": ["Fredoka"], "body-lg": ["Atkinson Hyperlegible Next"],
-        "label-sm": ["Atkinson Hyperlegible Next"], "headline-md": ["Fredoka"],
-        "display-lg": ["Fredoka"], "headline-lg": ["Fredoka"], "body-md": ["Atkinson Hyperlegible Next"]
-      },
-      fontSize: {
-        "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
-        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-        "label-sm": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
-        "headline-md": ["28px", { lineHeight: "1.3", fontWeight: "600" }],
-        "display-lg": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
-        "headline-lg": ["40px", { lineHeight: "1.2", fontWeight: "700" }],
-        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
-      }
-    }
-  }
-}
-</script>
-<style>
-body { background-color: theme('colors.surface'); color: theme('colors.on-surface'); }
-.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-.skip-link:not(:focus) { position: absolute; left: -9999px; }
-.bento-shadow { box-shadow: 0px 4px 20px rgba(0,0,0,0.03); transition: box-shadow 0.3s ease, transform 0.3s ease; }
-.bento-shadow:hover { box-shadow: 0px 10px 25px rgba(0,0,0,0.05); transform: translateY(-2px); }
-.status-strip-action { border-left: 4px solid theme('colors.secondary'); }
-.status-strip-confirmed { border-left: 4px solid theme('colors.primary'); }
-</style>
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/auth.js"></script>
 </head>
-<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
 <a class="skip-link bg-primary text-on-primary px-4 py-2 rounded-md z-[100] fixed top-2 left-2" href="#main">Skip to content</a>
 
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
-<a href="index.html" class="flex items-center gap-6">
-<span class="flex items-center gap-2">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center gap-4 px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+<a class="flex items-center gap-2 text-headline-md font-headline-md font-extrabold text-primary tracking-tight" href="index.html">
 <svg class="h-10 w-10 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>
-<span class="text-headline-md font-headline-md font-extrabold text-primary tracking-tight">Pride South Side</span>
-</span>
+<span class="hidden sm:inline">Pride South Side</span>
 </a>
-<nav class="hidden md:flex gap-6 ml-8" aria-label="Primary">
-<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
-<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors duration-200" href="shop.html">Shop</a>
-<a class="text-on-surface-variant font-label-sm text-label-sm hover:text-secondary transition-colors duration-200" href="events.html">Events</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm hover:text-secondary transition-colors duration-200" href="lovewell.html" aria-current="page">Lovewell &amp; Healthcare</a>
+<nav class="hidden lg:flex items-center gap-7 font-label-sm text-label-sm" aria-label="Primary">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="events.html">Events</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Marketplace</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="lovewell.html" aria-current="page">Lovewell</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="media.html">The Front Porch</a>
 </nav>
-<div class="flex items-center gap-4">
-<a class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm hover:bg-surface-tint transition-colors" href="#join">Join Lovewell</a>
+<div class="flex items-center gap-3">
+<a hidden data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="hub.html">
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">group</span>
+<span class="hidden sm:inline">Member Hub</span>
+</a>
 </div>
 </header>
+<main id="main" class="pt-20">
 
-<main id="main" class="flex-grow pt-28 pb-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
-
-<!-- Program Hero -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 <div>
-<span class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full w-fit mb-6 font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[18px]" aria-hidden="true">favorite</span> Free to join
-</span>
-<h1 class="font-display-lg text-display-lg text-on-background mb-4">Care that meets you on the porch.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Lovewell is Pride South Side's loyalty and healthcare access program — connecting Buy South Side discounts, festival perks, telehealth, and medication access in one place. We're building toward 10,000 members and a mobile app.</p>
-<a class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-md" href="#join">Join the Waitlist</a>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">Lovewell Membership Program</p>
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">Connect. Support. Thrive.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Lovewell is designed to bring health and cultural resources to the greater South and Southwest Side of Chicago. By becoming a member, you help support LGBTQ+-serving organizations and influence positive behavior and change in our community.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a hidden data-guest-only class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="hub.html">Go to the Member Hub</a>
+<a class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors" href="#benefits">See member benefits</a>
 </div>
-<div class="aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative">
-<img class="w-full h-full object-cover" alt="A diverse group interacting warmly with a wellness app on a smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiBUXxuLPrKNk8rHygiabp6Hm0slOp1t3JkftHFeaSoYIwPuPh6NkCtRPXDMGsZhLx7z_7WOuJiXo2f8QDuqT_LPCJRxEu9pP3T-RxDSA0f7TjCaFbNGXpodkKnQQRBMQtffTp_bBeOv3Efjc6kJT1ceW4Gyw-ZlO74lvo7UjiQC_IwoEGMSpuM3Umm42waeyJUjDhKBqDr4mD44XTga0UbSsFWFgA8F5zOTq9UzBlXlDCagWXKp3m">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay"></div>
+</div>
+<div>
+<div class="photo-slot aspect-[4/3] w-full rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Lovewell / community photo — import from pridesouthside.org</span>
+</div>
+</div>
 </div>
 </section>
 
-<!-- Three pillars of the program -->
-<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-20">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
-<span class="material-symbols-outlined text-secondary-container text-3xl" aria-hidden="true">medication</span>
-<h2 class="font-headline-md text-headline-md text-lg text-on-background mt-3 mb-1">Healthcare Access</h2>
-<p class="font-body-md text-sm text-on-surface-variant">Telehealth provider access, medication access, and free wellness checks.</p>
+<!-- Membership benefits, in the order set by the program overview -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface" id="benefits">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-12">Membership Benefits</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 bento-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-pride-yellow text-3xl" aria-hidden="true">local_offer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Benefit 1</span>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
-<span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">loyalty</span>
-<h2 class="font-headline-md text-headline-md text-lg text-on-background mt-3 mb-1">Event &amp; Store Discounts</h2>
-<p class="font-body-md text-sm text-on-surface-variant">Earn points and unlock savings at Buy South Side and during the festival.</p>
+<h3 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Pride South Side Marketplace Discounts</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Access automatic discounts across all products listed on the Pride South Side Marketplace when logged in.</p>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
-<span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">group</span>
-<h2 class="font-headline-md text-headline-md text-lg text-on-background mt-3 mb-1">Free Account Management</h2>
-<p class="font-body-md text-sm text-on-surface-variant">One place to manage your appointments, rewards, and community perks.</p>
+
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 bento-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-pride-orange text-3xl" aria-hidden="true">confirmation_number</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Benefit 2</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Exclusive Event Perks</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Get special access to community events, discounted pre-sale tickets, and member-only gatherings; starting with Pride South Side.</p>
+</div>
+
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 bento-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-pride-purple text-3xl" aria-hidden="true">forum</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Benefit 3</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Social Community Hub</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Participate in our online community platform to share posts, find events, and connect with neighbors.</p>
+</div>
+
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 bento-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-pride-green text-3xl" aria-hidden="true">local_hospital</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Benefit 4</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Community Healthcare Directory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">In Phase 1 of our program, we are focusing on community connection by providing a comprehensive directory of local Federally Qualified Health Centers (FQHCs) and trusted, queer-affirming clinics to help you find convenient care in your neighborhood, de-emphasizing clinical healthcare and reimbursement in the short term.</p>
+</div>
+
+</div>
 </div>
 </section>
 
-<!-- Waitlist -->
-<section id="join" class="max-w-xl mx-auto text-center mb-20 scroll-mt-24">
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-3">Join the Lovewell Waitlist</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">Lovewell is launching soon. Sign up and we'll let you know the moment it's live.</p>
-<form class="flex flex-col sm:flex-row gap-3" id="waitlist-form">
-<label class="sr-only" for="waitlist-email">Email address</label>
-<input class="flex-1 px-4 py-3 rounded-full border border-outline-variant bg-surface-container-lowest text-on-background focus:outline-none focus:ring-2 focus:ring-primary" id="waitlist-email" name="email" placeholder="Enter your email" required="" type="email">
-<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-md" type="submit">Join Waitlist</button>
-</form>
-<p class="font-body-md text-sm text-on-surface-variant mt-3" id="waitlist-status" role="status"></p>
+<!-- Partner tiers -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-inverse-surface text-inverse-on-surface">
+<div class="max-w-container-max mx-auto">
+<div class="max-w-3xl mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-surface-bright mb-4">For Collective Organizations &amp; Partners</h2>
+<p class="font-body-lg text-body-lg text-surface-variant">Partner with us to drive foot traffic, raise brand awareness, and reach a deeply engaged audience. We offer paid subscription tiers to promote your services and collaborate on storytelling.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest/10 border border-surface-variant/20 rounded-xl p-8">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim mb-3">$1,000 / month</p>
+<h3 class="font-headline-md text-headline-md text-surface-bright text-xl mb-3">Directory of Services</h3>
+<p class="font-body-md text-body-md text-surface-variant">Include your organization's brand, physical location, focus interests, and send direct push notifications to our membership base.</p>
+</div>
+<div class="bg-surface-container-lowest/10 border border-surface-variant/20 rounded-xl p-8">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim mb-3">$500 &ndash; $2,000</p>
+<h3 class="font-headline-md text-headline-md text-surface-bright text-xl mb-3">Storytelling Packages</h3>
+<p class="font-body-md text-body-md text-surface-variant">Highlight your organization's impact with custom-curated articles, videos, and promotional features.</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-surface-variant mt-8">Partner sign-up details coming soon!</p>
+</div>
 </section>
 
-<!-- Dashboard preview -->
-<section>
-<div class="text-center mb-8">
-<span class="inline-block bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full mb-3">Preview</span>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">A look at your future Hub</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Once you join, this is where you'll manage your health and community perks. Sample data shown below.</p>
-</div>
-
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-<div>
-<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">Welcome to your Hub</h3>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Manage your health and explore your community perks.</p>
-</div>
-<div class="flex items-center gap-4 bg-surface-container-low border border-outline-variant rounded-full py-2 px-6">
-<div class="flex items-center gap-2 border-r border-outline-variant pr-4">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">stars</span>
-<div>
-<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-[10px]">Points</div>
-<div class="font-headline-md text-headline-md leading-none text-on-background">2,450</div>
-</div>
-</div>
-<div class="pl-2">
-<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-[10px]">Status</div>
-<div class="font-label-sm text-label-sm font-bold text-tertiary">Gold Advocate</div>
-</div>
-</div>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-min">
-<div class="col-span-1 md:col-span-8 bg-surface-container-lowest rounded-2xl border border-outline-variant bento-shadow overflow-hidden flex flex-col md:flex-row">
-<div class="p-8 md:p-10 flex flex-col justify-center w-full md:w-3/5">
-<div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full w-fit mb-6 font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[18px]" aria-hidden="true">health_and_safety</span> Priority Access
-</div>
-<h4 class="font-headline-md text-headline-md text-on-background mb-4">Your Health, Centered.</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">Access your prescriptions seamlessly and connect with affirming providers from the comfort of your front porch.</p>
-<div class="flex flex-col sm:flex-row gap-4 mt-auto">
-<span class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 opacity-90"><span class="material-symbols-outlined" aria-hidden="true">medication</span> Get Access to Medication</span>
-<span class="border-2 border-primary text-primary bg-transparent px-6 py-3 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 opacity-90"><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span> Schedule Telehealth</span>
-</div>
-</div>
-<div class="hidden md:block w-2/5 bg-surface-container-highest relative min-h-[300px]">
-<img class="w-full h-full object-cover absolute inset-0" alt="A telehealth consultation shown on a tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiBUXxuLPrKNk8rHygiabp6Hm0slOp1t3JkftHFeaSoYIwPuPh6NkCtRPXDMGsZhLx7z_7WOuJiXo2f8QDuqT_LPCJRxEu9pP3T-RxDSA0f7TjCaFbNGXpodkKnQQRBMQtffTp_bBeOv3Efjc6kJT1ceW4Gyw-ZlO74lvo7UjiQC_IwoEGMSpuM3Umm42waeyJUjDhKBqDr4mD44XTga0UbSsFWFgA8F5zOTq9UzBlXlDCagWXKp3m">
-</div>
-</div>
-<div class="col-span-1 md:col-span-4 bg-surface-container-lowest rounded-2xl border border-outline-variant bento-shadow p-8 flex flex-col">
-<h4 class="font-headline-md text-headline-md text-on-background text-[22px] mb-6">Active Perks</h4>
-<ul class="space-y-4 flex-grow">
-<li class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/50">
-<div class="bg-secondary-fixed text-on-secondary-fixed p-2 rounded-full mt-1"><span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span></div>
-<div>
-<h5 class="font-label-sm text-label-sm text-on-background mb-1">15% off at Pride Shop</h5>
-<p class="font-body-md text-body-md text-[14px] text-on-surface-variant">Available on all apparel and accessories.</p>
-</div>
-</li>
-<li class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/50">
-<div class="bg-tertiary-fixed text-on-tertiary-fixed p-2 rounded-full mt-1"><span class="material-symbols-outlined" aria-hidden="true">festival</span></div>
-<div>
-<h5 class="font-label-sm text-label-sm text-on-background mb-1">Free entry to Festival Stages</h5>
-<p class="font-body-md text-body-md text-[14px] text-on-surface-variant">Skip-the-line access for Gold Advocates during the summer festival.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="col-span-1 md:col-span-6 bg-surface-container-lowest rounded-2xl border border-outline-variant bento-shadow p-8">
-<h4 class="font-headline-md text-headline-md text-on-background text-[22px] mb-6">Personal Checklist</h4>
-<div class="space-y-4">
-<div class="bg-surface rounded-r-xl border border-outline-variant/50 p-5 flex items-center justify-between status-strip-action shadow-sm">
-<div class="flex items-center gap-4">
-<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center"></div>
-<div>
-<h5 class="font-label-sm text-label-sm text-on-background">Annual wellness check</h5>
-<p class="font-body-md text-body-md text-[13px] text-error">Overdue by 2 weeks</p>
-</div>
-</div>
-</div>
-<div class="bg-surface rounded-r-xl border border-outline-variant/50 p-5 flex items-center justify-between status-strip-confirmed shadow-sm opacity-70">
-<div class="flex items-center gap-4">
-<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">check</span></div>
-<div>
-<h5 class="font-label-sm text-label-sm text-on-surface-variant line-through">Medication refill</h5>
-<p class="font-body-md text-body-md text-[13px] text-on-surface-variant">Completed on Oct 12</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-span-1 md:col-span-6 bg-inverse-surface rounded-2xl bento-shadow overflow-hidden relative flex items-center">
-<div class="p-8 md:p-10 z-10 w-full md:w-2/3">
-<h4 class="font-headline-md text-headline-md text-on-primary text-[24px] mb-3">Take the Porch with you.</h4>
-<p class="font-body-md text-body-md text-surface-variant mb-6">The Lovewell mobile app is coming soon — manage appointments, track loyalty points, and connect with community on the go.</p>
-<span class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-label-sm text-label-sm inline-flex items-center gap-2 opacity-90"><span class="material-symbols-outlined" aria-hidden="true">smartphone</span> Coming Soon</span>
-</div>
-</div>
+<!-- Join -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">Become a Member</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Membership is free. Create an account to join the community hub, browse the healthcare directory, and unlock member pricing in the marketplace.</p>
+<a hidden data-guest-only class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="hub.html">Go to the Member Hub</a>
 </div>
 </section>
 </main>
-
-<footer class="bg-inverse-surface w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter mt-auto">
-<div class="col-span-1 md:col-span-12 flex flex-col items-center md:items-start justify-center gap-8">
-<div class="flex items-center gap-2"><svg class="h-10 w-10 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg><span class="text-headline-md font-headline-md font-bold text-surface">Pride South Side</span></div>
-<nav class="flex flex-wrap justify-center md:justify-start gap-6">
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="index.html">Home</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="shop.html">Shop</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="events.html">Events</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/faqs">FAQs</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/donate">Donate</a>
-</nav>
-<div class="mt-4 text-center md:text-left text-on-primary font-body-md text-body-md opacity-80">© 2026 Pride South Side. All Rights Reserved. Built for the Community Front Porch.</div>
+<footer class="w-full bg-inverse-surface text-inverse-on-surface">
+<div class="pride-rule"></div>
+<div class="max-w-container-max mx-auto py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-5 flex flex-col gap-4">
+<span class="text-headline-md font-headline-md font-bold text-surface flex items-center gap-2"><svg class="h-8 w-8 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>Pride South Side</span>
+<p class="font-body-md text-body-md text-surface-variant">Pride South Side is a fiscal program of the Center on Halsted. &copy; 2026 Pride South Side. All rights reserved.</p>
+<div class="flex gap-4">
+<a aria-label="Pride South Side on Instagram" class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.instagram.com/pridesouthside/"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Explore</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html">Events &amp; Community Calendar</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="shop.html">Pride South Side Marketplace</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="lovewell.html">Lovewell Membership</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="media.html">The Front Porch Media</a>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Get involved</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="join.html">Become a Lovewell Member</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html#submit-event">Submit Your Event</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/vendor">Vendor Application</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/sponsors">Sponsors</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/faqs">FAQs</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/donate">Donate</a>
+</div>
 </div>
 </footer>
-
-<script>
-document.getElementById('waitlist-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  document.getElementById('waitlist-status').textContent = "You're on the list! We'll email you when Lovewell launches.";
-  this.reset();
-});
-</script>
 </body>
 </html>

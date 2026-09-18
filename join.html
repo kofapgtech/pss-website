@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Become a Lovewell Member — Pride South Side</title>
+<meta name="description" content="Create your free Lovewell account or sign in to access the community hub, healthcare directory, and member pricing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='75.25' cy='13.75' r='12.5' fill='%23FFDD19'/%3E%3Ccircle cx='35.25' cy='20.25' r='11.5' fill='%23FCB042'/%3E%3Ccircle cx='13.75' cy='39.25' r='11.25' fill='%23ED1C24'/%3E%3Ccircle cx='15.5' cy='66.75' r='11.25' fill='%237F4097'/%3E%3Ccircle cx='42.25' cy='85.5' r='11.5' fill='%231A75BC'/%3E%3Ccircle cx='86.25' cy='86.25' r='11.75' fill='%2300A14B'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Fredoka:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/auth.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<a class="skip-link bg-primary text-on-primary px-4 py-2 rounded-md z-[100] fixed top-2 left-2" href="#main">Skip to content</a>
+
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center gap-4 px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+<a class="flex items-center gap-2 text-headline-md font-headline-md font-extrabold text-primary tracking-tight" href="index.html">
+<svg class="h-10 w-10 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>
+<span class="hidden sm:inline">Pride South Side</span>
+</a>
+<nav class="hidden lg:flex items-center gap-7 font-label-sm text-label-sm" aria-label="Primary">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="events.html">Events</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Marketplace</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="lovewell.html">Lovewell</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="media.html">The Front Porch</a>
+</nav>
+<div class="flex items-center gap-3">
+<a hidden data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="hub.html">
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">group</span>
+<span class="hidden sm:inline">Member Hub</span>
+</a>
+</div>
+</header>
+<main id="main" class="pt-20">
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low min-h-[70vh]">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+<!-- Why join -->
+<div class="lg:pt-8">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">Lovewell Membership Program</p>
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">Become a Member</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Lovewell is designed to bring health and cultural resources to the greater South and Southwest Side of Chicago. By becoming a member, you help support LGBTQ+-serving organizations and influence positive behavior and change in our community.</p>
+<ul class="flex flex-col gap-4">
+<li class="flex gap-3"><span class="material-symbols-outlined text-pride-yellow" aria-hidden="true">local_offer</span><span class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-background">Marketplace discounts</strong> applied automatically when you're logged in.</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-pride-orange" aria-hidden="true">confirmation_number</span><span class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-background">Exclusive event perks</strong>, pre-sale tickets, and member-only gatherings.</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-pride-purple" aria-hidden="true">forum</span><span class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-background">Social community hub</strong> to share posts and connect with neighbors.</span></li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-pride-green" aria-hidden="true">local_hospital</span><span class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-background">Community healthcare directory</strong> of FQHCs and queer-affirming clinics.</span></li>
+</ul>
+<p class="font-body-md text-body-md text-on-surface-variant mt-8">Membership is free.</p>
+</div>
+
+<!-- Auth card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8 bento-shadow">
+<div class="flex gap-2 p-1 bg-surface-container rounded-full mb-8" role="tablist" aria-label="Sign up or sign in">
+<button class="flex-1 py-2 rounded-full font-label-sm text-label-sm transition-colors" id="tab-signup" role="tab" aria-controls="panel-signup" aria-selected="true" type="button">Sign up</button>
+<button class="flex-1 py-2 rounded-full font-label-sm text-label-sm transition-colors" id="tab-signin" role="tab" aria-controls="panel-signin" aria-selected="false" type="button">Log in</button>
+</div>
+
+<!-- Sign up -->
+<form id="panel-signup" role="tabpanel" aria-labelledby="tab-signup" class="flex flex-col gap-4">
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="su-name">Display name <span class="text-error">*</span></label>
+<input class="field" id="su-name" name="display_name" required maxlength="80" autocomplete="nickname" type="text">
+<p class="font-body-md text-xs text-on-surface-variant mt-1">This is how you'll appear to other members.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="su-pronouns">Pronouns</label>
+<input class="field" id="su-pronouns" name="pronouns" maxlength="40" type="text">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="su-hood">Neighborhood</label>
+<input class="field" id="su-hood" name="neighborhood" maxlength="80" type="text">
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="su-email">Email <span class="text-error">*</span></label>
+<input class="field" id="su-email" name="email" required autocomplete="email" type="email">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="su-password">Password <span class="text-error">*</span></label>
+<input class="field" id="su-password" name="password" required minlength="8" autocomplete="new-password" type="password">
+<p class="font-body-md text-xs text-on-surface-variant mt-1">At least 8 characters.</p>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" type="submit">Become a Member</button>
+<p class="font-body-md text-sm text-on-surface-variant" id="signup-status" role="status"></p>
+</form>
+
+<!-- Sign in -->
+<form id="panel-signin" role="tabpanel" aria-labelledby="tab-signin" class="flex-col gap-4 hidden">
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="si-email">Email</label>
+<input class="field" id="si-email" name="email" required autocomplete="email" type="email">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="si-password">Password</label>
+<input class="field" id="si-password" name="password" required autocomplete="current-password" type="password">
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" type="submit">Log in</button>
+<button class="font-label-sm text-label-sm text-primary hover:text-secondary underline self-start" id="forgot-password" type="button">Forgot your password?</button>
+<p class="font-body-md text-sm text-on-surface-variant" id="signin-status" role="status"></p>
+</form>
+
+<p class="font-body-md text-xs text-on-surface-variant mt-6 pt-6 border-t border-outline-variant">By creating an account you'll be able to post in the community hub. Be kind to your neighbors.</p>
+</div>
+</div>
+</section>
+</main>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  /* Only ever bounce back to a page inside this site: an absolute or
+     protocol-relative "next" would be an open redirect. */
+  const raw = params.get('next') || 'hub.html';
+  const next = /^[a-zA-Z0-9._-]+\.html(?:[?#].*)?$/.test(raw) ? raw : 'hub.html';
+
+  const tabSignup = document.getElementById('tab-signup');
+  const tabSignin = document.getElementById('tab-signin');
+  const panelSignup = document.getElementById('panel-signup');
+  const panelSignin = document.getElementById('panel-signin');
+
+  const ACTIVE = 'bg-surface-container-lowest text-primary shadow-sm';
+  const IDLE = 'text-on-surface-variant';
+
+  function show(mode) {
+    const signup = mode === 'signup';
+    tabSignup.className = 'flex-1 py-2 rounded-full font-label-sm text-label-sm transition-colors ' + (signup ? ACTIVE : IDLE);
+    tabSignin.className = 'flex-1 py-2 rounded-full font-label-sm text-label-sm transition-colors ' + (signup ? IDLE : ACTIVE);
+    tabSignup.setAttribute('aria-selected', String(signup));
+    tabSignin.setAttribute('aria-selected', String(!signup));
+    panelSignup.className = (signup ? 'flex' : 'hidden') + ' flex-col gap-4';
+    panelSignin.className = (signup ? 'hidden' : 'flex') + ' flex-col gap-4';
+  }
+  tabSignup.addEventListener('click', function () { show('signup'); });
+  tabSignin.addEventListener('click', function () { show('signin'); });
+  show(params.get('mode') === 'signin' ? 'signin' : 'signup');
+
+  /* Already signed in? There is nothing to do on this page. */
+  PSS.getSession().then(function (session) {
+    if (session) window.location.replace(next);
+  });
+
+  const signupStatus = document.getElementById('signup-status');
+  const signinStatus = document.getElementById('signin-status');
+
+  function guard(status) {
+    if (PSS.isConfigured) return false;
+    PSS.setText(status, 'Accounts are not connected yet. Please check back soon.');
+    return true;
+  }
+
+  panelSignup.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (guard(signupStatus)) return;
+    const fd = new FormData(panelSignup);
+    PSS.setText(signupStatus, 'Creating your account…');
+    const { data, error } = await PSS.client.auth.signUp({
+      email: fd.get('email'),
+      password: fd.get('password'),
+      options: {
+        /* handle_new_user() reads these to build the profile row. */
+        data: {
+          display_name: fd.get('display_name'),
+          pronouns: fd.get('pronouns'),
+          neighborhood: fd.get('neighborhood')
+        },
+        emailRedirectTo: new URL('hub.html', window.location.href).href
+      }
+    });
+    if (error) {
+      PSS.setText(signupStatus, error.message);
+      return;
+    }
+    /* With email confirmation on, signUp returns a user but no session. */
+    if (data.session) {
+      window.location.href = next;
+    } else {
+      PSS.setText(signupStatus, "Almost there — check your email to confirm your address, then log in.");
+      panelSignup.reset();
+    }
+  });
+
+  panelSignin.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (guard(signinStatus)) return;
+    const fd = new FormData(panelSignin);
+    PSS.setText(signinStatus, 'Signing you in…');
+    const { error } = await PSS.client.auth.signInWithPassword({
+      email: fd.get('email'),
+      password: fd.get('password')
+    });
+    if (error) {
+      PSS.setText(signinStatus, error.message);
+      return;
+    }
+    window.location.href = next;
+  });
+
+  document.getElementById('forgot-password').addEventListener('click', async function () {
+    if (guard(signinStatus)) return;
+    const email = document.getElementById('si-email').value;
+    if (!email) {
+      PSS.setText(signinStatus, 'Enter your email above first, then tap the reset link.');
+      return;
+    }
+    const { error } = await PSS.client.auth.resetPasswordForEmail(email, {
+      redirectTo: new URL('hub.html', window.location.href).href
+    });
+    PSS.setText(signinStatus, error
+      ? error.message
+      : 'If that email has an account, a reset link is on its way.');
+  });
+})();
+</script>
+<footer class="w-full bg-inverse-surface text-inverse-on-surface">
+<div class="pride-rule"></div>
+<div class="max-w-container-max mx-auto py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-5 flex flex-col gap-4">
+<span class="text-headline-md font-headline-md font-bold text-surface flex items-center gap-2"><svg class="h-8 w-8 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>Pride South Side</span>
+<p class="font-body-md text-body-md text-surface-variant">Pride South Side is a fiscal program of the Center on Halsted. &copy; 2026 Pride South Side. All rights reserved.</p>
+<div class="flex gap-4">
+<a aria-label="Pride South Side on Instagram" class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.instagram.com/pridesouthside/"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Explore</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html">Events &amp; Community Calendar</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="shop.html">Pride South Side Marketplace</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="lovewell.html">Lovewell Membership</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="media.html">The Front Porch Media</a>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Get involved</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="join.html">Become a Lovewell Member</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html#submit-event">Submit Your Event</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/vendor">Vendor Application</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/sponsors">Sponsors</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/faqs">FAQs</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/donate">Donate</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

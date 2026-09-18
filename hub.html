@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Hub — Lovewell | Pride South Side</title>
+<meta name="description" content="The Lovewell Social Community Hub: share posts, find events, browse the community healthcare directory, and connect with neighbors.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='75.25' cy='13.75' r='12.5' fill='%23FFDD19'/%3E%3Ccircle cx='35.25' cy='20.25' r='11.5' fill='%23FCB042'/%3E%3Ccircle cx='13.75' cy='39.25' r='11.25' fill='%23ED1C24'/%3E%3Ccircle cx='15.5' cy='66.75' r='11.25' fill='%237F4097'/%3E%3Ccircle cx='42.25' cy='85.5' r='11.5' fill='%231A75BC'/%3E%3Ccircle cx='86.25' cy='86.25' r='11.75' fill='%2300A14B'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Fredoka:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/auth.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<a class="skip-link bg-primary text-on-primary px-4 py-2 rounded-md z-[100] fixed top-2 left-2" href="#main">Skip to content</a>
+
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center gap-4 px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+<a class="flex items-center gap-2 text-headline-md font-headline-md font-extrabold text-primary tracking-tight" href="index.html">
+<svg class="h-10 w-10 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>
+<span class="hidden sm:inline">Pride South Side</span>
+</a>
+<nav class="hidden lg:flex items-center gap-7 font-label-sm text-label-sm" aria-label="Primary">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="events.html">Events</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Marketplace</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="lovewell.html">Lovewell</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="media.html">The Front Porch</a>
+</nav>
+<div class="flex items-center gap-3">
+<a hidden data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="hub.html">
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">group</span>
+<span class="hidden sm:inline">Member Hub</span>
+</a>
+</div>
+</header>
+<main id="main" class="pt-20">
+
+<!-- Shown while the session is still resolving, so the hub never flashes
+     member content at a signed-out visitor. -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap" id="hub-loading">
+<p class="max-w-container-max mx-auto font-body-lg text-body-lg text-on-surface-variant">Loading your hub…</p>
+</section>
+
+<!-- Signed out -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low" id="hub-gate" hidden>
+<div class="max-w-3xl mx-auto text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 block" aria-hidden="true">lock</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">The Member Hub is for Lovewell members</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Membership is free. Create an account to share posts, find events, and connect with neighbors.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="join.html?next=hub.html">Become a Member</a>
+<a class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors" href="join.html?next=hub.html&amp;mode=signin">Log in</a>
+</div>
+</div>
+</section>
+
+<!-- Signed in -->
+<div id="hub-content" hidden>
+
+<section class="w-full px-margin-mobile md:px-margin-desktop pt-12 pb-8 bg-surface-container-low">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-2">Lovewell Member Hub</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Welcome, <span data-member-name>member</span>.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2" id="member-since"></p>
+</div>
+<button class="inline-flex items-center gap-2 px-6 py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors self-start" id="sign-out" type="button">
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">logout</span> Log out
+</button>
+</div>
+</section>
+
+<section class="w-full px-margin-mobile md:px-margin-desktop pb-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+
+<!-- Community feed -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h2 class="font-headline-md text-headline-md text-on-background text-xl mb-4">Share with the community</h2>
+<form id="post-form" class="flex flex-col gap-3">
+<label class="sr-only" for="post-body">Your post</label>
+<textarea class="field" id="post-body" name="body" rows="3" maxlength="5000" required placeholder="What's happening on your block?"></textarea>
+<div class="flex flex-wrap items-center justify-between gap-3">
+<p class="font-body-md text-xs text-on-surface-variant"><span id="post-count">0</span>/5000</p>
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-sm" type="submit">Post</button>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant" id="post-status" role="status"></p>
+</form>
+</div>
+
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-background text-xl">Community feed</h2>
+<button class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1" id="refresh-feed" type="button">
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">refresh</span> Refresh
+</button>
+</div>
+<div class="flex flex-col gap-4" id="feed"></div>
+</div>
+
+<!-- Member sidebar -->
+<aside class="lg:col-span-4 flex flex-col gap-gutter">
+
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-pride-yellow text-2xl" aria-hidden="true">local_offer</span>
+<h2 class="font-headline-md text-headline-md text-on-background text-lg">Marketplace discounts</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Your member discount applies automatically across all products listed on the Pride South Side Marketplace while you're logged in.</p>
+<a class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1" href="shop.html">Visit the marketplace <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
+</div>
+
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-pride-green text-2xl" aria-hidden="true">local_hospital</span>
+<h2 class="font-headline-md text-headline-md text-on-background text-lg">Healthcare directory</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Local Federally Qualified Health Centers (FQHCs) and trusted, queer-affirming clinics near you.</p>
+<div id="providers"></div>
+</div>
+
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-pride-orange text-2xl" aria-hidden="true">confirmation_number</span>
+<h2 class="font-headline-md text-headline-md text-on-background text-lg">Member events</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Special access to community events, discounted pre-sale tickets, and member-only gatherings.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4"><strong>Member event perks coming soon!</strong></p>
+<a class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1" href="events.html">See the community calendar <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
+</div>
+
+<!-- Profile -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-pride-purple text-2xl" aria-hidden="true">badge</span>
+<h2 class="font-headline-md text-headline-md text-on-background text-lg">Your profile</h2>
+</div>
+<form class="flex flex-col gap-4" id="profile-form">
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="pf-name">Display name</label>
+<input class="field" id="pf-name" name="display_name" required maxlength="80" type="text">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="pf-pronouns">Pronouns</label>
+<input class="field" id="pf-pronouns" name="pronouns" maxlength="40" type="text">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="pf-hood">Neighborhood</label>
+<input class="field" id="pf-hood" name="neighborhood" maxlength="80" type="text">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="pf-bio">About you</label>
+<textarea class="field" id="pf-bio" name="bio" rows="3" maxlength="500"></textarea>
+</div>
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors self-start" type="submit">Save profile</button>
+<p class="font-body-md text-sm text-on-surface-variant" id="profile-status" role="status"></p>
+</form>
+</div>
+
+</aside>
+</div>
+</section>
+</div>
+</main>
+
+<script src="assets/js/hub.js"></script>
+<footer class="w-full bg-inverse-surface text-inverse-on-surface">
+<div class="pride-rule"></div>
+<div class="max-w-container-max mx-auto py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-5 flex flex-col gap-4">
+<span class="text-headline-md font-headline-md font-bold text-surface flex items-center gap-2"><svg class="h-8 w-8 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>Pride South Side</span>
+<p class="font-body-md text-body-md text-surface-variant">Pride South Side is a fiscal program of the Center on Halsted. &copy; 2026 Pride South Side. All rights reserved.</p>
+<div class="flex gap-4">
+<a aria-label="Pride South Side on Instagram" class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.instagram.com/pridesouthside/"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Explore</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html">Events &amp; Community Calendar</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="shop.html">Pride South Side Marketplace</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="lovewell.html">Lovewell Membership</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="media.html">The Front Porch Media</a>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Get involved</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="join.html">Become a Lovewell Member</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html#submit-event">Submit Your Event</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/vendor">Vendor Application</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/sponsors">Sponsors</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/faqs">FAQs</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/donate">Donate</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

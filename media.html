@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pride South Side Marketplace</title>
-<meta name="description" content="Support local artisans and queer-owned businesses through the Pride South Side Marketplace. Lovewell members get automatic discounts on products.">
+<title>The Front Porch Media — Pride South Side</title>
+<meta name="description" content="The Front Porch is a digital front porch where community voices, stories, and experiences can be preserved and shared.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='75.25' cy='13.75' r='12.5' fill='%23FFDD19'/%3E%3Ccircle cx='35.25' cy='20.25' r='11.5' fill='%23FCB042'/%3E%3Ccircle cx='13.75' cy='39.25' r='11.25' fill='%23ED1C24'/%3E%3Ccircle cx='15.5' cy='66.75' r='11.25' fill='%237F4097'/%3E%3Ccircle cx='42.25' cy='85.5' r='11.5' fill='%231A75BC'/%3E%3Ccircle cx='86.25' cy='86.25' r='11.75' fill='%2300A14B'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -27,9 +27,9 @@
 <nav class="hidden lg:flex items-center gap-7 font-label-sm text-label-sm" aria-label="Primary">
 <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
 <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="events.html">Events</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1" href="shop.html" aria-current="page">Marketplace</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Marketplace</a>
 <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="lovewell.html">Lovewell</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="media.html">The Front Porch</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="media.html" aria-current="page">The Front Porch</a>
 </nav>
 <div class="flex items-center gap-3">
 <a hidden data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
@@ -42,142 +42,35 @@
 <main id="main" class="pt-20">
 <section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low">
 <div class="max-w-container-max mx-auto max-w-3xl">
-<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">Pride South Side Marketplace</p>
-<h1 class="font-display-lg text-display-lg text-on-background mb-6">Support Local Artisans &amp; Queer-Owned Businesses</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Welcome to our curated marketplace of local queer-owned businesses, artisans, and vendors.</p>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">The Front Porch Media</p>
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">Community Based Digital Storytelling</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The Front Porch is a digital front porch where community voices, stories, and experiences can be preserved and shared.</p>
 </div>
 </section>
 
 <section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface">
 <div class="max-w-container-max mx-auto">
-<!-- Filled from marketplace_products when the shop opens; until then the
-     empty state below is what visitors see. -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" id="marketplace-products"></div>
+<div class="border border-dashed border-outline-variant rounded-xl p-12 text-center mb-12">
+<p class="font-headline-md text-headline-md text-on-background text-2xl mb-3">Stories coming soon!</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">The Front Porch is not part of the first iteration. Articles and videos will appear here once it launches.</p>
 </div>
-</section>
-
-<section class="w-full px-margin-mobile md:px-margin-desktop pb-section-gap bg-surface">
-<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
-<span class="material-symbols-outlined text-primary text-3xl mb-3 block" aria-hidden="true">sell</span>
-<h2 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Lovewell Member-Exclusive Pricing</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Lovewell members get automatic discounts on products! Sign in before you check out and member pricing is applied for you.</p>
-<a hidden data-guest-only class="inline-flex items-center justify-center px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors" href="join.html?next=shop.html">Become a Member</a>
-<p hidden data-auth-only class="font-body-md text-body-md text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">check_circle</span> You're signed in — member pricing will apply at checkout.</p>
+<span class="material-symbols-outlined text-primary text-3xl mb-3 block" aria-hidden="true">forum</span>
+<h2 class="font-headline-md text-headline-md text-on-background text-xl mb-3">User post capabilities &amp; permissions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A space where members can comment and share articles. User-submitted articles may also be enabled pending moderation.</p>
 </div>
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
-<span class="material-symbols-outlined text-secondary text-3xl mb-3 block" aria-hidden="true">storefront</span>
-<h2 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Sell with us</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Are you a local queer-owned business, artisan, or vendor? Apply to join the marketplace.</p>
-<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors" href="https://www.pridesouthside.org/vendor">Vendor application</a>
+<span class="material-symbols-outlined text-secondary text-3xl mb-3 block" aria-hidden="true">group</span>
+<h2 class="font-headline-md text-headline-md text-on-background text-xl mb-3">Members post today</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Lovewell members can already share posts and connect with neighbors in the Social Community Hub.</p>
+<a hidden data-guest-only class="inline-flex items-center justify-center px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors" href="join.html?next=hub.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center justify-center px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors" href="hub.html">Go to the Member Hub</a>
+</div>
 </div>
 </div>
 </section>
 </main>
-
-<script>
-/* The marketplace is a stub for the first iteration. If products are
-   published later, this renders them; otherwise it shows "coming soon". */
-(async function () {
-  const grid = document.getElementById('marketplace-products');
-  const signedIn = Boolean(await PSS.getSession());
-
-  function comingSoon(message) {
-    grid.innerHTML = '';
-    const box = document.createElement('div');
-    box.className = 'col-span-full border border-dashed border-outline-variant rounded-xl p-12 text-center';
-    const h = document.createElement('p');
-    h.className = 'font-headline-md text-headline-md text-on-background text-2xl mb-3';
-    h.textContent = 'Shop coming soon!';
-    const p = document.createElement('p');
-    p.className = 'font-body-lg text-body-lg text-on-surface-variant';
-    PSS.setText(p, message);
-    box.append(h, p);
-    grid.appendChild(box);
-  }
-
-  if (!PSS.isConfigured) {
-    comingSoon('Products will be listed here once the marketplace opens.');
-    return;
-  }
-
-  const { data, error } = await PSS.client
-    .from('marketplace_products')
-    .select('*')
-    .eq('status', 'published')
-    .order('created_at', { ascending: false });
-
-  if (error || !data || data.length === 0) {
-    comingSoon('Products will be listed here once the marketplace opens.');
-    return;
-  }
-
-  grid.innerHTML = '';
-  data.forEach(function (product) {
-    const card = document.createElement('article');
-    card.className = 'bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden bento-shadow flex flex-col';
-
-    const media = document.createElement('div');
-    media.className = 'aspect-[4/5] bg-surface-variant overflow-hidden';
-    if (product.image_url) {
-      const img = document.createElement('img');
-      img.className = 'w-full h-full object-cover';
-      img.loading = 'lazy';
-      img.src = product.image_url;
-      img.alt = '';
-      media.appendChild(img);
-    } else {
-      media.className += ' photo-slot';
-    }
-    card.appendChild(media);
-
-    const body = document.createElement('div');
-    body.className = 'p-4 flex flex-col gap-1 flex-1';
-
-    const name = document.createElement('h2');
-    name.className = 'font-headline-md text-headline-md text-on-background text-lg';
-    PSS.setText(name, product.name);
-    body.appendChild(name);
-
-    if (product.vendor_name) {
-      const vendor = document.createElement('p');
-      vendor.className = 'font-body-md text-sm text-on-surface-variant';
-      PSS.setText(vendor, 'By ' + product.vendor_name);
-      body.appendChild(vendor);
-    }
-
-    /* Member price is shown to everyone so the discount is a visible
-       reason to join, but it is only *applied* when signed in. */
-    const price = document.createElement('p');
-    price.className = 'font-label-sm text-label-sm text-on-background mt-2';
-    const dollars = function (cents) { return '$' + (cents / 100).toFixed(2); };
-    const hasMemberPrice = product.member_price_cents != null
-      && product.price_cents != null
-      && product.member_price_cents < product.price_cents;
-
-    if (hasMemberPrice && signedIn) {
-      price.textContent = dollars(product.member_price_cents) + ' member price';
-    } else if (hasMemberPrice) {
-      price.textContent = dollars(product.price_cents)
-        + ' · ' + dollars(product.member_price_cents) + ' for members';
-    } else if (product.price_cents != null) {
-      price.textContent = dollars(product.price_cents);
-    }
-    body.appendChild(price);
-
-    const cta = document.createElement('a');
-    cta.className = 'mt-auto pt-4 block text-center w-full py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors';
-    /* Checkout requires an account, so send guests through sign-in first
-       and bring them back here afterwards. */
-    cta.href = signedIn ? (product.external_url || '#') : 'join.html?next=shop.html';
-    cta.textContent = signedIn ? 'View item' : 'Sign in to buy';
-    body.appendChild(cta);
-
-    card.appendChild(body);
-    grid.appendChild(card);
-  });
-})();
-</script>
 <footer class="w-full bg-inverse-surface text-inverse-on-surface">
 <div class="pride-rule"></div>
 <div class="max-w-container-max mx-auto py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">

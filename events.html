@@ -3,234 +3,189 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Community Calendar — Pride South Side</title>
-<meta name="description" content="Discover upcoming gatherings, workshops, and celebrations on the Pride South Side Front Porch, including the 2026 Pride South Side Festival.">
+<title>Events &amp; Community Calendar — Pride South Side</title>
+<meta name="description" content="Discover what's happening around town: LGBTQ+ culture, events, and community activities on Chicago's South Side, from the Pride South Side Festival to local meetups.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='75.25' cy='13.75' r='12.5' fill='%23FFDD19'/%3E%3Ccircle cx='35.25' cy='20.25' r='11.5' fill='%23FCB042'/%3E%3Ccircle cx='13.75' cy='39.25' r='11.25' fill='%23ED1C24'/%3E%3Ccircle cx='15.5' cy='66.75' r='11.25' fill='%237F4097'/%3E%3Ccircle cx='42.25' cy='85.5' r='11.5' fill='%231A75BC'/%3E%3Ccircle cx='86.25' cy='86.25' r='11.75' fill='%2300A14B'/%3E%3C/svg%3E">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Fredoka:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "on-primary": "#ffffff", "surface-tint": "#145a82", "on-tertiary": "#ffffff",
-        "on-background": "#16181c", "surface-container-lowest": "#ffffff", "surface-variant": "#e4e4e7",
-        "secondary-container": "#ff6b61", "primary-fixed-dim": "#7cc1ea", "on-tertiary-fixed-variant": "#653e00",
-        "on-secondary-fixed": "#5c0a08", "secondary": "#e31e24", "on-primary-fixed": "#0b3b57",
-        "on-tertiary-container": "#fffbff", "tertiary-container": "#a65d00", "surface-container-high": "#e8e8e8",
-        "on-surface-variant": "#52525b", "on-tertiary-fixed": "#2a1700", "primary-fixed": "#dceefb",
-        "error-container": "#ffdad6", "on-secondary-fixed-variant": "#a3241b", "tertiary-fixed-dim": "#ffb95f",
-        "on-error-container": "#93000a", "secondary-fixed": "#ffd9d6", "primary": "#1a75bc",
-        "surface-dim": "#e0e0e0", "inverse-primary": "#7cc1ea", "surface": "#fafafa", "outline": "#71717a",
-        "on-primary-container": "#fffbff", "on-secondary-container": "#7a1410", "background": "#fafafa",
-        "tertiary-fixed": "#fbe4c0", "inverse-surface": "#23252b", "surface-bright": "#fafafa",
-        "on-primary-fixed-variant": "#145a82", "on-error": "#ffffff", "on-secondary": "#ffffff",
-        "inverse-on-surface": "#f4f4f5", "secondary-fixed-dim": "#ffb0cd", "surface-container-highest": "#e0e0e0",
-        "error": "#ba1a1a", "on-surface": "#16181c", "surface-container-low": "#f5f5f5", "tertiary": "#a65d00",
-        "outline-variant": "#d4d4d8", "surface-container": "#f0f0f0", "primary-container": "#3b93ce"
-      },
-      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
-      spacing: { base: "8px", gutter: "24px", "margin-desktop": "48px", "section-gap": "80px", "container-max": "1280px", "margin-mobile": "16px" },
-      fontFamily: {
-        "headline-lg-mobile": ["Fredoka"], "body-lg": ["Atkinson Hyperlegible Next"],
-        "label-sm": ["Atkinson Hyperlegible Next"], "headline-md": ["Fredoka"],
-        "display-lg": ["Fredoka"], "headline-lg": ["Fredoka"], "body-md": ["Atkinson Hyperlegible Next"]
-      },
-      fontSize: {
-        "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
-        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-        "label-sm": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
-        "headline-md": ["28px", { lineHeight: "1.3", fontWeight: "600" }],
-        "display-lg": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
-        "headline-lg": ["40px", { lineHeight: "1.2", fontWeight: "700" }],
-        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
-      }
-    }
-  }
-}
-</script>
-<style>
-.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-.skip-link:not(:focus) { position: absolute; left: -9999px; }
-.status-strip { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; border-radius: 4px 0 0 4px; }
-.status-strip-confirmed { background-color: #22c55e; }
-.status-strip-pending { background-color: #f59e0b; }
-</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/auth.js"></script>
 </head>
-<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-20">
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
 <a class="skip-link bg-primary text-on-primary px-4 py-2 rounded-md z-[100] fixed top-2 left-2" href="#main">Skip to content</a>
 
-<header class="bg-surface fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
-<a href="index.html" class="flex items-center gap-2">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center gap-4 px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+<a class="flex items-center gap-2 text-headline-md font-headline-md font-extrabold text-primary tracking-tight" href="index.html">
 <svg class="h-10 w-10 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>
-<span class="text-headline-md font-headline-md font-extrabold text-primary tracking-tight">Pride South Side</span>
+<span class="hidden sm:inline">Pride South Side</span>
 </a>
-<nav class="hidden md:flex gap-6" aria-label="Primary">
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Shop</a>
-<a class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1 hover:text-secondary transition-colors duration-200" href="events.html" aria-current="page">Events</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="lovewell.html">Lovewell &amp; Healthcare</a>
+<nav class="hidden lg:flex items-center gap-7 font-label-sm text-label-sm" aria-label="Primary">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="events.html" aria-current="page">Events</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Marketplace</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="lovewell.html">Lovewell</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="media.html">The Front Porch</a>
 </nav>
-<div class="flex items-center gap-4">
-<a class="bg-primary text-on-primary font-label-sm text-label-sm px-4 py-2 rounded-full hover:bg-primary-container transition-colors duration-200" href="lovewell.html">Join Lovewell</a>
+<div class="flex items-center gap-3">
+<a hidden data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="hub.html">
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">group</span>
+<span class="hidden sm:inline">Member Hub</span>
+</a>
 </div>
 </header>
+<main id="main" class="pt-20">
 
-<main id="main" class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
-<header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-<div>
-<h1 class="font-display-lg text-display-lg md:text-display-lg mb-2 text-primary">Community Calendar</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover upcoming gatherings, workshops, and celebrations on the Front Porch. Connect with your community and find your space.</p>
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto max-w-3xl">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">Events &amp; Community Calendar</p>
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">Discover What's Happening Around Town</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Welcome to the ultimate hub for LGBTQ+ culture, events, and community activities in Chicago's South Side. From our annual festival to local meetups, there is always something happening to keep you connected, inspired, and engaged.</p>
 </div>
-<a class="bg-secondary text-on-secondary font-label-sm text-label-sm px-6 py-3 rounded-full hover:bg-secondary-container transition-colors duration-200 shadow-sm flex items-center gap-2" href="https://www.pridesouthside.org/submit-your-event">
-<span class="material-symbols-outlined" aria-hidden="true">add_circle</span> Submit an Event</a>
-</header>
+</section>
 
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<aside class="lg:col-span-4 flex flex-col gap-8">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
-<div class="flex justify-between items-center mb-4">
-<h2 class="font-headline-md text-headline-md text-on-surface">July 2026</h2>
-</div>
-<div class="grid grid-cols-7 gap-1 text-center font-label-sm text-label-sm text-on-surface-variant mb-2">
-<div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
-</div>
-<div class="grid grid-cols-7 gap-1 text-center font-body-md text-body-md">
-<div class="p-2 text-outline">26</div><div class="p-2 text-outline">27</div><div class="p-2 text-outline">28</div><div class="p-2 text-outline">29</div><div class="p-2 text-outline">30</div><div class="p-2 text-outline">31</div><div class="p-2 rounded-full">1</div>
-<div class="p-2 rounded-full">2</div><div class="p-2 rounded-full">3</div><div class="p-2 rounded-full">4</div>
-<div class="p-2 rounded-full bg-primary text-on-primary font-bold relative">5<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-on-primary rounded-full"></span></div>
-<div class="p-2 rounded-full">6</div><div class="p-2 rounded-full">7</div><div class="p-2 rounded-full">8</div>
-<div class="p-2 rounded-full">9</div><div class="p-2 rounded-full">10</div><div class="p-2 rounded-full">11</div><div class="p-2 rounded-full">12</div><div class="p-2 rounded-full">13</div><div class="p-2 rounded-full relative">14<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-secondary rounded-full"></span></div><div class="p-2 rounded-full">15</div>
-<div class="p-2 rounded-full">16</div><div class="p-2 rounded-full relative">17<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary-container rounded-full"></span></div><div class="p-2 rounded-full">18</div><div class="p-2 rounded-full">19</div><div class="p-2 rounded-full">20</div><div class="p-2 rounded-full">21</div><div class="p-2 rounded-full">22</div>
-<div class="p-2 rounded-full">23</div><div class="p-2 rounded-full">24</div><div class="p-2 rounded-full">25</div><div class="p-2 rounded-full">26</div><div class="p-2 rounded-full">27</div><div class="p-2 rounded-full">28</div><div class="p-2 rounded-full relative">29<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-secondary rounded-full"></span></div>
+<!-- Festival -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<div class="lg:col-span-5">
+<div class="photo-slot aspect-[4/3] w-full h-full min-h-[240px] rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Festival photo — import from pridesouthside.org</span>
 </div>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
-<h3 class="font-headline-md text-headline-md mb-4">Filter Events</h3>
-<div class="flex flex-col gap-3">
-<label class="flex items-center gap-2 cursor-pointer">
-<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
-<span class="font-body-md text-body-md">All Categories</span></label>
-<label class="flex items-center gap-2 cursor-pointer">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
-<span class="font-body-md text-body-md">Arts &amp; Culture</span></label>
-<label class="flex items-center gap-2 cursor-pointer">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
-<span class="font-body-md text-body-md">Healthcare Workshops</span></label>
-<label class="flex items-center gap-2 cursor-pointer">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
-<span class="font-body-md text-body-md">Festivals</span></label>
-</div>
-</div>
-</aside>
-
-<div class="lg:col-span-8 flex flex-col gap-6">
-<div class="relative rounded-xl overflow-hidden shadow-sm group">
-<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
-<img class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" alt="Outdoor summer festival at sunset with a crowd dancing and socializing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJZXbesZrmnq_wJ79ziqq2Ymeu8vidG0FTgpTKrhG62IHl34tOnuyRaOd_eRTb3Au7nqEVwBDsCw8LL_L_HhyJWoucZ5GvTa8_J3rXaNXqQYMIjHqU7NWk3ukKcXWOsKCYAkeLs0LfDpzzhZlUFTCfnraRcXt7u9yuoW2k58FIroTuzWPCLQLuYFQbsMY0nMCYLzfsNjBb0aycLB0sTPyNZi0adkaX9uAQz1WUzA-bTrhSGVgmP5W6">
-<div class="absolute bottom-0 left-0 w-full p-6 z-20">
-<span class="inline-block px-3 py-1 bg-secondary text-on-secondary font-label-sm text-label-sm rounded-full mb-3 shadow-md">Major Festival</span>
-<h2 class="font-display-lg text-display-lg text-on-background mb-2">Pride South Side Festival 2026</h2>
-<div class="flex flex-wrap gap-4 font-body-md text-body-md text-on-surface-variant mb-4">
-<div class="flex items-center gap-1"><span class="material-symbols-outlined text-primary" aria-hidden="true">calendar_today</span> Sunday, July 5, 2026</div>
-<div class="flex items-center gap-1"><span class="material-symbols-outlined text-primary" aria-hidden="true">location_on</span> DuSable Black History Museum</div>
-</div>
-<div class="flex gap-3">
-<a class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-2 rounded-full hover:bg-primary-container transition-colors" href="https://www.pridesouthside.org/event-details/2026-pride-south-side-festival">RSVP Now</a>
-</div>
-</div>
-</div>
-
-<div class="flex flex-col gap-4">
-<div class="relative bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md hover:border-b-2 hover:border-secondary transition-all duration-300 flex flex-col md:flex-row gap-6">
-<div class="status-strip status-strip-confirmed"></div>
-<div class="flex-shrink-0 text-center bg-surface-container px-4 py-3 rounded-lg w-24">
-<div class="font-label-sm text-label-sm text-primary uppercase">Jun</div>
-<div class="font-display-lg text-display-lg text-on-surface">14</div>
-</div>
-<div class="flex-grow flex flex-col justify-center">
-<div class="flex items-center gap-2 mb-1">
-<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[12px] px-2 py-0.5 rounded-sm">Community Approved</span>
-<span class="text-tertiary font-label-sm text-label-sm">Arts &amp; Culture</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Queer Art Showcase: Local Voices</h3>
-<div class="flex flex-wrap gap-4 font-body-md text-body-md text-on-surface-variant">
-<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 6:00 PM – 9:00 PM</div>
-<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" aria-hidden="true">location_on</span> The Gallery Space, 47th St</div>
-</div>
-</div>
-<div class="flex-shrink-0 flex md:flex-col justify-end items-end gap-2 mt-4 md:mt-0">
-<a class="w-full md:w-auto border-2 border-primary text-primary font-label-sm text-label-sm px-4 py-2 rounded-full hover:bg-surface-container transition-colors text-center" href="https://www.pridesouthside.org/events">RSVP</a>
-</div>
-</div>
-<div class="relative bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md hover:border-b-2 hover:border-tertiary transition-all duration-300 flex flex-col md:flex-row gap-6">
-<div class="status-strip status-strip-pending"></div>
-<div class="flex-shrink-0 text-center bg-surface-container px-4 py-3 rounded-lg w-24">
-<div class="font-label-sm text-label-sm text-primary uppercase">Jun</div>
-<div class="font-display-lg text-display-lg text-on-surface">17</div>
-</div>
-<div class="flex-grow flex flex-col justify-center">
-<div class="flex items-center gap-2 mb-1">
-<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[12px] px-2 py-0.5 rounded-sm">Pending Verification</span>
-<span class="text-secondary font-label-sm text-label-sm">Healthcare</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Mental Health First Aid Workshop</h3>
-<div class="flex flex-wrap gap-4 font-body-md text-body-md text-on-surface-variant">
-<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" aria-hidden="true">schedule</span> 10:00 AM – 2:00 PM</div>
-<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" aria-hidden="true">videocam</span> Virtual Event</div>
-</div>
-</div>
-<div class="flex-shrink-0 flex md:flex-col justify-end items-end gap-2 mt-4 md:mt-0">
-<a class="w-full md:w-auto border-2 border-primary text-primary font-label-sm text-label-sm px-4 py-2 rounded-full hover:bg-surface-container transition-colors text-center" href="https://www.pridesouthside.org/events">RSVP</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<section class="mt-20">
-<h2 class="font-display-lg text-display-lg text-primary mb-2">The Front Porch</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-3xl">Intimate, tiny-desk style performances featuring local artists. Grab a seat on the porch.</p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
-<div class="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group">
-<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Intimate acoustic performance in a cozy tiny-desk style setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0eW6_QJPqupVDy6n9aBHllrZ0vnQ6xvkbfLCSGVZBmZCrlG-_ZJsnPrfA_iPbeTZnoQ8yq9jhn75Q21dvkvQQL_gKnM_wircfSx_c7bxJHL-5oFH96RR4VgAMKnvJg92VWSWA4Lbn5x59snvRuZpdIpVvL3XO0uCor5ModvsKKY9Y1I7CfnL2a8ToaCbqz0APKNCOH9U0RBa6_DsKqjlCm-hM6KF-jd1CrD8lvoHDmLECr2Hs1Tjp">
-<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/40 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-6">
-<span class="inline-block px-2 py-1 bg-surface-container text-on-surface font-label-sm text-label-sm rounded mb-2">Next Up</span>
-<h3 class="font-headline-lg text-headline-lg text-surface-container-lowest mb-1">Acoustic Soul Sessions</h3>
-<p class="font-body-md text-body-md text-surface-variant mb-4">Featuring Marcus T. &amp; Friends</p>
-</div>
-</div>
-<div class="relative rounded-xl overflow-hidden bg-primary-fixed group flex flex-col justify-end p-6 border border-outline-variant">
-<div class="relative z-10">
-<h4 class="font-headline-md text-headline-md text-on-primary-fixed mb-1">Poetry Slam</h4>
-<p class="font-body-md text-body-md text-on-primary-fixed-variant mb-3">Friday, 7:00 PM</p>
-</div>
-</div>
-<div class="relative rounded-xl overflow-hidden bg-secondary-fixed group flex flex-col justify-end p-6 border border-outline-variant">
-<div class="relative z-10">
-<h4 class="font-headline-md text-headline-md text-on-secondary-fixed mb-1">DJ Set: Afrobeat Night</h4>
-<p class="font-body-md text-body-md text-on-secondary-fixed-variant mb-3">Saturday, 10:00 PM</p>
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col justify-center">
+<span class="inline-flex w-fit items-center bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-md font-label-sm text-xs mb-3">Main event</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-4">Pride South Side Festival</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">calendar_today</span> Sunday, July 5, 2026</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">location_on</span> DuSable Black History Museum, Chicago</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">confirmation_number</span> Admission is free and open to the public</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Full festival line-up and schedule coming soon!</p>
+<div class="flex flex-wrap gap-3">
+<a class="inline-flex items-center justify-center px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors" href="https://www.pridesouthside.org/event-details/2026-pride-south-side-festival">RSVP</a>
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors" href="https://www.pridesouthside.org/vendor">Become a vendor</a>
 </div>
 </div>
 </div>
 </section>
+
+<!-- The calendar itself -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-3">Event calendar</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Everything coming up across the South and Southwest Side.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="calendar-events"></div>
+</div>
+</section>
+
+<!-- Submit your event -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-section-gap bg-surface" id="submit-event">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">Submit Your Event</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Are you hosting an event that serves or supports the South Side LGBTQ+ community? Share it with us!</p>
+<form class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-5" id="event-form">
+<div class="md:col-span-2">
+<label class="block font-label-sm text-label-sm mb-2" for="ev-title">Event name <span class="text-error">*</span></label>
+<input class="field" id="ev-title" name="title" required maxlength="160" type="text">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="ev-when">Date and time</label>
+<input class="field" id="ev-when" name="starts_at" type="datetime-local">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="ev-venue">Venue or location</label>
+<input class="field" id="ev-venue" name="venue_name" maxlength="160" type="text">
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-sm text-label-sm mb-2" for="ev-details">Tell us about it</label>
+<textarea class="field" id="ev-details" name="details" rows="4" maxlength="2000"></textarea>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="ev-url">Link to more info</label>
+<input class="field" id="ev-url" name="external_url" placeholder="https://" type="url">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm mb-2" for="ev-name">Your name</label>
+<input class="field" id="ev-name" name="contact_name" maxlength="120" type="text">
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-sm text-label-sm mb-2" for="ev-email">Your email <span class="text-error">*</span></label>
+<input class="field" id="ev-email" name="contact_email" required type="email">
+</div>
+<div class="md:col-span-2 flex flex-wrap items-center gap-4">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" type="submit">Submit event</button>
+<p class="font-body-md text-sm text-on-surface-variant" id="event-form-status" role="status"></p>
+</div>
+</form>
+</div>
+</section>
 </main>
 
-<footer class="bg-inverse-surface w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter mt-auto">
-<div class="md:col-span-4 flex flex-col justify-between">
-<div class="mb-4 flex items-center gap-2"><svg class="h-10 w-10 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg><span class="text-headline-md font-headline-md font-bold text-surface">Pride South Side</span></div>
-<div class="font-body-md text-body-md text-surface-variant mt-4">© 2026 Pride South Side. All Rights Reserved. Built for the Community Front Porch.</div>
+<script src="assets/js/events-feed.js"></script>
+<script>
+/* Event submissions are insert-only for the public (see the RLS policy):
+   the form can post a submission but can never read the queue back. */
+document.getElementById('event-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const status = document.getElementById('event-form-status');
+  if (!PSS.isConfigured) {
+    PSS.setText(status, 'Event submissions are not connected yet. Please check back soon.');
+    return;
+  }
+  const fd = new FormData(form);
+  const session = await PSS.getSession();
+  const when = fd.get('starts_at');
+  PSS.setText(status, 'Sending…');
+  const { error } = await PSS.client.from('event_submissions').insert({
+    title: fd.get('title'),
+    /* datetime-local has no timezone; let the browser resolve it to the
+       visitor's local zone before handing Postgres a timestamptz. */
+    starts_at: when ? new Date(when).toISOString() : null,
+    venue_name: fd.get('venue_name') || null,
+    details: fd.get('details') || null,
+    external_url: fd.get('external_url') || null,
+    contact_name: fd.get('contact_name') || null,
+    contact_email: fd.get('contact_email'),
+    submitted_by: session ? session.user.id : null
+  });
+  if (error) {
+    PSS.setText(status, "Sorry, that didn't go through. Please try again.");
+    return;
+  }
+  PSS.setText(status, 'Thank you! We have your event and will be in touch.');
+  form.reset();
+});
+</script>
+<footer class="w-full bg-inverse-surface text-inverse-on-surface">
+<div class="pride-rule"></div>
+<div class="max-w-container-max mx-auto py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-5 flex flex-col gap-4">
+<span class="text-headline-md font-headline-md font-bold text-surface flex items-center gap-2"><svg class="h-8 w-8 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>Pride South Side</span>
+<p class="font-body-md text-body-md text-surface-variant">Pride South Side is a fiscal program of the Center on Halsted. &copy; 2026 Pride South Side. All rights reserved.</p>
+<div class="flex gap-4">
+<a aria-label="Pride South Side on Instagram" class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.instagram.com/pridesouthside/"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></a>
 </div>
-<div class="md:col-span-8 flex flex-wrap justify-end gap-x-8 gap-y-4 items-center">
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="index.html">Home</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="shop.html">Shop</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="lovewell.html">Lovewell</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/faqs">FAQs</a>
-<a class="font-label-sm text-label-sm text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/donate">Donate</a>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Explore</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html">Events &amp; Community Calendar</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="shop.html">Pride South Side Marketplace</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="lovewell.html">Lovewell Membership</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="media.html">The Front Porch Media</a>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Get involved</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="join.html">Become a Lovewell Member</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html#submit-event">Submit Your Event</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/vendor">Vendor Application</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/sponsors">Sponsors</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/faqs">FAQs</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/donate">Donate</a>
+</div>
 </div>
 </footer>
 </body>

@@ -4,351 +4,210 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pride South Side — The Front Porch of the South Side</title>
-<meta name="description" content="Pride South Side is a Black- and Brown-led LGBTQI+ celebration on Chicago's South Side. RSVP to the 2026 festival, shop local vendors, find community events, and join Lovewell for care and rewards.">
+<meta name="description" content="Pride South Side is a Black- and Brown-led LGBTQI+ celebration on Chicago's South Side. Find events around town, shop the marketplace, and join Lovewell for community, discounts, and health resources.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='75.25' cy='13.75' r='12.5' fill='%23FFDD19'/%3E%3Ccircle cx='35.25' cy='20.25' r='11.5' fill='%23FCB042'/%3E%3Ccircle cx='13.75' cy='39.25' r='11.25' fill='%23ED1C24'/%3E%3Ccircle cx='15.5' cy='66.75' r='11.25' fill='%237F4097'/%3E%3Ccircle cx='42.25' cy='85.5' r='11.5' fill='%231A75BC'/%3E%3Ccircle cx='86.25' cy='86.25' r='11.75' fill='%2300A14B'/%3E%3C/svg%3E">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Fredoka:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "on-primary": "#ffffff", "surface-tint": "#145a82", "on-tertiary": "#ffffff",
-        "on-background": "#16181c", "surface-container-lowest": "#ffffff", "surface-variant": "#e4e4e7",
-        "secondary-container": "#ff6b61", "primary-fixed-dim": "#7cc1ea", "on-tertiary-fixed-variant": "#653e00",
-        "on-secondary-fixed": "#5c0a08", "secondary": "#e31e24", "on-primary-fixed": "#0b3b57",
-        "on-tertiary-container": "#fffbff", "tertiary-container": "#a65d00", "surface-container-high": "#e8e8e8",
-        "on-surface-variant": "#52525b", "on-tertiary-fixed": "#2a1700", "primary-fixed": "#dceefb",
-        "error-container": "#ffdad6", "on-secondary-fixed-variant": "#a3241b", "tertiary-fixed-dim": "#ffb95f",
-        "on-error-container": "#93000a", "secondary-fixed": "#ffd9d6", "primary": "#1a75bc",
-        "surface-dim": "#e0e0e0", "inverse-primary": "#7cc1ea", "surface": "#fafafa", "outline": "#71717a",
-        "on-primary-container": "#fffbff", "on-secondary-container": "#7a1410", "background": "#fafafa",
-        "tertiary-fixed": "#fbe4c0", "inverse-surface": "#23252b", "surface-bright": "#fafafa",
-        "on-primary-fixed-variant": "#145a82", "on-error": "#ffffff", "on-secondary": "#ffffff",
-        "inverse-on-surface": "#f4f4f5", "secondary-fixed-dim": "#ffb0cd", "surface-container-highest": "#e0e0e0",
-        "error": "#ba1a1a", "on-surface": "#16181c", "surface-container-low": "#f5f5f5", "tertiary": "#a65d00",
-        "outline-variant": "#d4d4d8", "surface-container": "#f0f0f0", "primary-container": "#3b93ce"
-      },
-      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
-      spacing: { base: "8px", gutter: "24px", "margin-desktop": "48px", "section-gap": "80px", "container-max": "1280px", "margin-mobile": "16px" },
-      fontFamily: {
-        "headline-lg-mobile": ["Fredoka"], "body-lg": ["Atkinson Hyperlegible Next"],
-        "label-sm": ["Atkinson Hyperlegible Next"], "headline-md": ["Fredoka"],
-        "display-lg": ["Fredoka"], "headline-lg": ["Fredoka"], "body-md": ["Atkinson Hyperlegible Next"]
-      },
-      fontSize: {
-        "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
-        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-        "label-sm": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
-        "headline-md": ["28px", { lineHeight: "1.3", fontWeight: "600" }],
-        "display-lg": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
-        "headline-lg": ["40px", { lineHeight: "1.2", fontWeight: "700" }],
-        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
-      }
-    }
-  }
-}
-</script>
-<style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  .skip-link:not(:focus) { position: absolute; left: -9999px; }
-</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/theme.js"></script>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/auth.js"></script>
 </head>
 <body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
 <a class="skip-link bg-primary text-on-primary px-4 py-2 rounded-md z-[100] fixed top-2 left-2" href="#main">Skip to content</a>
 
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
-<div class="flex items-center gap-4">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center gap-4 px-margin-mobile md:px-margin-desktop h-20 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
 <a class="flex items-center gap-2 text-headline-md font-headline-md font-extrabold text-primary tracking-tight" href="index.html">
 <svg class="h-10 w-10 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>
-<span>Pride South Side</span>
+<span class="hidden sm:inline">Pride South Side</span>
+</a>
+<nav class="hidden lg:flex items-center gap-7 font-label-sm text-label-sm" aria-label="Primary">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="index.html" aria-current="page">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="events.html">Events</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Marketplace</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="lovewell.html">Lovewell</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="media.html">The Front Porch</a>
+</nav>
+<div class="flex items-center gap-3">
+<a hidden data-guest-only class="inline-flex items-center justify-center px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="hub.html">
+<span class="material-symbols-outlined text-[18px]" aria-hidden="true">group</span>
+<span class="hidden sm:inline">Member Hub</span>
 </a>
 </div>
-<nav class="hidden md:flex items-center gap-8 font-label-sm text-label-sm" aria-label="Primary">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-secondary transition-colors duration-200" href="index.html" aria-current="page">Home</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="shop.html">Shop</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="events.html">Events</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="lovewell.html">Lovewell &amp; Healthcare</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#media">Media</a>
-</nav>
-<div class="flex items-center gap-4">
-<a class="hidden md:flex items-center justify-center px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-sm" href="lovewell.html">Join Lovewell</a>
-</div>
 </header>
-
 <main id="main" class="pt-20">
-<!-- Hero -->
-<section class="relative w-full min-h-[80vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-section-gap overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img alt="" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdUxZENLfjAzxCIs7sh18GlQ7oVnKm_t5YzQOF1LhZWZCqxKPa8uwdOqhzkkisi0OpNw8sUZi7IhvWkr2DL_9Y23Fv6Q-iHDH5SkJSeuib--4kG1qD_rHK8hfhVeYqmIfg-EWySDEBrhoN0vP6xUEmjTj68E6uUyKFeiHB3OgOajIKgZVx-kYgLZV-vUbGmfRRhnpIARpzNQ9rvmvjuHUxhHuTuI-VzVrUmwsSll0X15OC5tJYU0tW">
-<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
-</div>
-<div class="relative z-10 max-w-container-max mx-auto text-center flex flex-col items-center">
-<span class="inline-flex items-center gap-2 bg-surface-container-lowest/90 border border-outline-variant px-4 py-1.5 rounded-full font-label-sm text-label-sm text-primary mb-6 shadow-sm">Celebrating 8 Years of Love in Action</span>
-<h1 class="font-display-lg text-display-lg text-on-background max-w-4xl mx-auto mb-6">The Front Porch of the South Side.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-4">A vibrant, intersectional space for Black and Brown LGBTQI+ folks to live out loud and care for one another — celebrating community, commerce, and care.</p>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mb-10">Join us <strong>Sunday, July 5, 2026</strong> at the DuSable Black History Museum. Admission is free and open to the public.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+<!-- Hero: the festival is the main draw -->
+<section class="relative w-full px-margin-mobile md:px-margin-desktop py-section-gap overflow-hidden bg-surface-container-low">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col items-start">
+<span class="inline-flex items-center gap-2 bg-surface-container-lowest border border-outline-variant px-4 py-1.5 rounded-full font-label-sm text-label-sm text-primary mb-6 shadow-sm">Pride South Side Festival 2026</span>
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">The Front Porch of the South Side.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">A vibrant, intersectional space for Black and Brown LGBTQI+ folks to live out loud and care for one another — celebrating community, commerce, and care.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Join us <strong>Sunday, July 5, 2026</strong> at the DuSable Black History Museum. Admission is free and open to the public.</p>
+<div class="flex flex-col sm:flex-row gap-4">
 <a class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-md" href="https://www.pridesouthside.org/event-details/2026-pride-south-side-festival">RSVP for the 2026 Festival</a>
-<a class="inline-flex items-center justify-center px-8 py-3 bg-surface-container border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container-high transition-colors duration-200" href="shop.html">Shop Local Vendors</a>
+<a class="inline-flex items-center justify-center px-8 py-3 bg-surface-container border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container-high transition-colors duration-200" href="join.html">Become a Member</a>
 </div>
 </div>
-</section>
-
-<!-- Community Action Strip -->
-<section class="w-full px-margin-mobile md:px-margin-desktop py-12 bg-surface-container-low border-y border-outline-variant">
-<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col gap-3">
-<span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">inventory_2</span>
-<h3 class="font-headline-md text-headline-md text-lg text-on-background">Bring a canned food item</h3>
-<p class="font-body-md text-body-md text-sm text-on-surface-variant">Support our year-long food drive. One can, or nonperishable good, can nourish one family.</p>
+<div>
+<div class="photo-slot aspect-[4/3] w-full rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Festival hero photo goes here — import from pridesouthside.org</span>
 </div>
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col gap-3">
-<span class="material-symbols-outlined text-secondary text-3xl" aria-hidden="true">volunteer_activism</span>
-<h3 class="font-headline-md text-headline-md text-lg text-on-background">Donate to Pride South Side</h3>
-<p class="font-body-md text-body-md text-sm text-on-surface-variant">Every dollar raised stays in our community, funding essential programming and sustaining the arts.</p>
-<a class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1 mt-auto" href="https://www.pridesouthside.org/donate">Donate now <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
-</div>
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 flex flex-col gap-3">
-<span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">monitor_heart</span>
-<h3 class="font-headline-md text-headline-md text-lg text-on-background">Take our health survey</h3>
-<p class="font-body-md text-body-md text-sm text-on-surface-variant">Help us build public health initiatives designed specifically to heal us. Tell us what you need.</p>
-<a class="font-label-sm text-label-sm text-primary hover:text-secondary inline-flex items-center gap-1 mt-auto" href="https://forms.gle/auMPVjz8xW8KdYbP9">Take the survey <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
 </div>
 </div>
 </section>
 
-<!-- Pillar 1: Pride Shop -->
+<!-- 1. Events: what people can do around town -->
+<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="events">
+<div class="max-w-container-max mx-auto">
+<div class="max-w-3xl mb-12">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">Events &amp; Community Calendar</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">Discover What's Happening Around Town</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Welcome to the ultimate hub for LGBTQ+ culture, events, and community activities in Chicago's South Side. From our annual festival to local meetups, there is always something happening to keep you connected, inspired, and engaged.</p>
+</div>
+
+<!-- Festival, pinned as the main draw -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-12">
+<div class="lg:col-span-5">
+<div class="photo-slot aspect-[4/3] w-full h-full min-h-[240px] rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Festival photo — import from pridesouthside.org</span>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col justify-center">
+<span class="inline-flex w-fit items-center bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-md font-label-sm text-xs mb-3">Main event</span>
+<h3 class="font-headline-md text-headline-md text-on-background text-2xl mb-3">Pride South Side Festival</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">calendar_today</span> Sunday, July 5, 2026</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">location_on</span> DuSable Black History Museum, Chicago</p>
+<div class="flex flex-wrap gap-3">
+<a class="inline-flex items-center justify-center px-6 py-2 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors" href="https://www.pridesouthside.org/event-details/2026-pride-south-side-festival">RSVP</a>
+<a class="inline-flex items-center justify-center px-6 py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors" href="events.html">See the full calendar</a>
+</div>
+</div>
+</div>
+
+<!-- Live from the events table; empty until events are added -->
+<h3 class="font-headline-md text-headline-md text-on-background text-xl mb-6">Coming up around town</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="home-events" data-events-limit="3"></div>
+<div class="mt-8">
+<a class="inline-flex items-center gap-2 text-primary hover:text-secondary font-label-sm text-label-sm" href="events.html">View the full community calendar <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
+</div>
+</div>
+</section>
+
+<!-- Festival photo / video reel -->
+<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-3">From the festival</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Photos and video from Pride South Side.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="photo-slot aspect-square rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Festival photo 1 — import from pridesouthside.org</span>
+</div>
+<div class="photo-slot aspect-square rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Festival photo 2 — import from pridesouthside.org</span>
+</div>
+<div class="photo-slot aspect-square rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Festival photo 3 — import from pridesouthside.org</span>
+</div>
+<div class="photo-slot aspect-square rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Festival photo 4 — import from pridesouthside.org</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-6">Festival photo and video reel coming soon!</p>
+</div>
+</section>
+
+<!-- 2. Shop -->
 <section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="shop">
-<div class="max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 <div>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Buy South Side</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Support local queer and allied creators — 100% of revenue funds community social programs.</p>
-</div>
-<a class="inline-flex items-center gap-2 text-primary hover:text-secondary font-label-sm text-label-sm transition-colors duration-200" href="shop.html">View All Vendors <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<div class="group relative bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:shadow-[0px_10px_25px_rgba(0,0,0,0.05)] hover:border-b-2 hover:border-b-secondary-container transition-all duration-300">
-<div class="aspect-[4/5] relative overflow-hidden bg-surface-variant">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="South Side Tote bag by Community Crafts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvazw0d0DhtFSYR7swbIXxFG5ysla5-1nLmGcRLrSrgZFQ-GVLtSv40vZRtoCke_Eko4ooUi6H_bs0VKkEjmWKwujKtV-KIJbTzO2ciHGuNLOUpqG-_x-k_L9Y4wDgG2pvhbwnIxO_jIWhDO3fIrg-UQ78A_JB8o3iL9LWayMImpsjjJc5qRp-kOB9rgMf0KuBh9QIN_nuXpcYUw9y09H1nM2Fu9s7WPtLHfOvm6u005MOoluCFZQ6">
-<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm">$25</div>
-</div>
-<div class="p-4">
-<h3 class="font-headline-md text-headline-md text-on-background text-lg mb-1">South Side Tote</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">By Community Crafts</p>
-<a class="block text-center w-full py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors duration-200" href="shop.html">View in Shop</a>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">Pride South Side Marketplace</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">Support Local Artisans &amp; Queer-Owned Businesses</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Welcome to our curated marketplace of local queer-owned businesses, artisans, and vendors.</p>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 mb-6 flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">sell</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background text-lg mb-1">Lovewell Member-Exclusive Pricing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Lovewell members get automatic discounts on products.</p>
 </div>
 </div>
-<div class="group relative bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:shadow-[0px_10px_25px_rgba(0,0,0,0.05)] hover:border-b-2 hover:border-b-secondary-container transition-all duration-300">
-<div class="aspect-[4/5] relative overflow-hidden bg-surface-variant">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Pride Pin Set by Queer Wares" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxQ2px89V4ZvmQYyhYZ510YF725hhCHwPMP5skDg7HRMAzKEpihyFzxfbnBj9PulFUM6_LYaAb59ZQF-DfCDibaq5EX7x4qHjtniBX73G6NaWQmVtT5dforKZBc8WWoaIPV4-xOG_BTWFOOK3DDLj5o2XUUVoaszwP_4zxa-jzctjGV_Q29AGRaS7AXQrWEbAzqeNvbMNZ2-NWOGVS6OTaASLwirSsZMvUEwNK7hHqO8oo61b-XYBN">
-<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm">$15</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6"><strong>Marketplace coming soon!</strong></p>
+<a class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-surface-container transition-colors" href="shop.html">Visit the marketplace</a>
 </div>
-<div class="p-4">
-<h3 class="font-headline-md text-headline-md text-on-background text-lg mb-1">Pride Pin Set</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">By Queer Wares</p>
-<a class="block text-center w-full py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors duration-200" href="shop.html">View in Shop</a>
-</div>
-</div>
-<div class="group relative bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:shadow-[0px_10px_25px_rgba(0,0,0,0.05)] hover:border-b-2 hover:border-b-secondary-container transition-all duration-300">
-<div class="aspect-[4/5] relative overflow-hidden bg-surface-variant">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Restoration Oil Set by Bronzeville Botanicals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBDJtE80LbVJRvZuIbxhNRePNoRwh2C0Pj0Z8vQxZknaqnXEUINFk8cVLDqFq5LDtIYVXMgd5vmRc0VE-lsYSb_nw9t3JGOA1PpBMnzdWjt6Q4f-ilqUi45nVdr-stlo0RXo9rBgSgqzY22rC2673OdSnc4UQa2z9s8dxRk2XerXFH0hOEP4TyovkM55Y7vz0_YoVQUc4Eb64uePYfoow-YMi1wuORN0-PFIxwCqHsRpyAQM25M3V4">
-<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm">$30</div>
-</div>
-<div class="p-4">
-<h3 class="font-headline-md text-headline-md text-on-background text-lg mb-1">Botanical Balm</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">By Rooted Apothecary</p>
-<a class="block text-center w-full py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors duration-200" href="shop.html">View in Shop</a>
-</div>
-</div>
-<div class="group relative bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:shadow-[0px_10px_25px_rgba(0,0,0,0.05)] hover:border-b-2 hover:border-b-secondary-container transition-all duration-300">
-<div class="aspect-[4/5] relative overflow-hidden bg-surface-variant">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Stories Zine Vol 1 by Porch Press" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuMV_j8SekkSKLymEr9LkF3GogJTB-TKOxwBlnvaaKrOnqESX6lvGn_fZ_t3kewngPM4Ku_Pi2zKmnqnRhPR-b0fmeBwyJPmgIj_hQCFJmfi72U9V_wDfuIqbLtbwd9V-N6YIQcguKbbKuztaOy-af9KOdfK24DR86JA0ksf3u86-3CgDXmMCI7i4wKuZvPj_-Q55YdDcwZ8RoQZlK827rUBeQG6vOgQjEAXJCfdSmG1RxLj0C0IwM">
-<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm">$12</div>
-</div>
-<div class="p-4">
-<h3 class="font-headline-md text-headline-md text-on-background text-lg mb-1">Stories Zine Vol 1</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">By Porch Press</p>
-<a class="block text-center w-full py-2 border-2 border-primary text-primary rounded-full font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors duration-200" href="shop.html">View in Shop</a>
-</div>
+<div>
+<div class="photo-slot aspect-[4/3] w-full rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Marketplace / vendor photo — import from pridesouthside.org</span>
 </div>
 </div>
 </div>
 </section>
 
-<!-- Pillar 2: Events -->
-<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="events">
+<!-- 3. Lovewell -->
+<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-inverse-surface text-inverse-on-surface" id="lovewell">
 <div class="max-w-container-max mx-auto">
-<div class="text-center mb-12">
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">Upcoming Gatherings</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">From block parties to health fairs, see what's happening on the South Side.</p>
+<div class="max-w-3xl mb-12">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim mb-3">Lovewell Membership Program</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-surface-bright mb-4">Connect. Support. Thrive.</h2>
+<p class="font-body-lg text-body-lg text-surface-variant">Lovewell is designed to bring health and cultural resources to the greater South and Southwest Side of Chicago. By becoming a member, you help support LGBTQ+-serving organizations and influence positive behavior and change in our community.</p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 border border-outline-variant shadow-sm h-fit">
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-headline-md text-headline-md text-on-background text-xl">July 2026</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter mb-12">
+<div class="bg-surface-container-lowest/10 border border-surface-variant/20 rounded-xl p-6">
+<span class="material-symbols-outlined text-pride-yellow text-3xl mb-3 block" aria-hidden="true">local_offer</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright text-lg mb-2">Marketplace Discounts</h3>
+<p class="font-body-md text-body-md text-surface-variant text-sm">Access automatic discounts across all products listed on the Pride South Side Marketplace when logged in.</p>
 </div>
-<div class="grid grid-cols-7 gap-1 text-center font-label-sm text-label-sm mb-2 text-on-surface-variant">
-<div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+<div class="bg-surface-container-lowest/10 border border-surface-variant/20 rounded-xl p-6">
+<span class="material-symbols-outlined text-pride-orange text-3xl mb-3 block" aria-hidden="true">confirmation_number</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright text-lg mb-2">Exclusive Event Perks</h3>
+<p class="font-body-md text-body-md text-surface-variant text-sm">Get special access to community events, discounted pre-sale tickets, and member-only gatherings; starting with Pride South Side.</p>
 </div>
-<div class="grid grid-cols-7 gap-1 text-center font-body-md text-body-md">
-<div class="p-2 text-outline-variant">28</div><div class="p-2 text-outline-variant">29</div><div class="p-2 text-outline-variant">30</div>
-<div class="p-2 rounded-full">1</div><div class="p-2 rounded-full">2</div><div class="p-2 rounded-full">3</div><div class="p-2 rounded-full">4</div>
-<div class="p-2 bg-primary text-on-primary rounded-full font-bold shadow-sm relative">5<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-on-primary rounded-full"></span></div>
-<div class="p-2 rounded-full">6</div><div class="p-2 rounded-full">7</div><div class="p-2 rounded-full">8</div><div class="p-2 rounded-full">9</div><div class="p-2 rounded-full">10</div><div class="p-2 rounded-full">11</div>
-<div class="p-2 rounded-full relative">18<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-secondary-container rounded-full"></span></div>
+<div class="bg-surface-container-lowest/10 border border-surface-variant/20 rounded-xl p-6">
+<span class="material-symbols-outlined text-pride-purple text-3xl mb-3 block" aria-hidden="true">forum</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright text-lg mb-2">Social Community Hub</h3>
+<p class="font-body-md text-body-md text-surface-variant text-sm">Participate in our online community platform to share posts, find events, and connect with neighbors.</p>
 </div>
-<a class="mt-6 block text-center font-label-sm text-label-sm text-primary hover:text-secondary" href="events.html">See full calendar →</a>
-</div>
-<div class="lg:col-span-8 flex flex-col gap-4">
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-shadow duration-300">
-<div class="w-full md:w-48 aspect-video md:aspect-square bg-surface-variant rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" alt="Community members celebrating at a block party" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD62oj4J8rDcUa7LkAwed5WuYmwSwTn1TcI0DURJQrZCVOLrdbpjt8h65kyWnTH-mjBuAXbAYeV6-kw7uO75f2WhVAZ8Bcen12jY2tEWjPLIerPfabghbr8j7GQheNub6zuNtt7Xuy2FPbdgBFZdKWQrVp9j7iUJiXkfebSx7tx7VjjQoaAufTamk9QrfpT-MycHRDVV-2oIO3P-PP63EMj-WEND5bDza8v05H6Uv6o5rAabZ3ZD806">
-</div>
-<div class="flex-1 flex flex-col justify-between h-full py-2">
-<div>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded-md font-label-sm text-xs">Festival</span>
-<span class="text-on-surface-variant font-label-sm text-sm flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">calendar_today</span> July 5, 2026, 2:00 PM</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-background text-2xl mb-2">Pride South Side Festival</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Join us at the DuSable Museum for local art, live music, and resource hubs designed to empower our community. Gates open 2pm, performances 2:30–9pm.</p>
-</div>
-<div class="flex gap-3">
-<a class="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm hover:opacity-90 transition-opacity" href="https://www.pridesouthside.org/event-details/2026-pride-south-side-festival">RSVP Now</a>
+<div class="bg-surface-container-lowest/10 border border-surface-variant/20 rounded-xl p-6">
+<span class="material-symbols-outlined text-pride-green text-3xl mb-3 block" aria-hidden="true">local_hospital</span>
+<h3 class="font-headline-md text-headline-md text-surface-bright text-lg mb-2">Community Healthcare Directory</h3>
+<p class="font-body-md text-body-md text-surface-variant text-sm">A directory of local Federally Qualified Health Centers (FQHCs) and trusted, queer-affirming clinics to help you find convenient care in your neighborhood.</p>
 </div>
 </div>
-</div>
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-shadow duration-300">
-<div class="w-full md:w-48 aspect-video md:aspect-square bg-surface-variant rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" alt="A healthcare provider speaking with a community member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-u_FLPkATgDr4tpyLJGnAjfmtFSH5d3K2aQoYCTW3dI06cN-PjMj41djuf6ruseChBMPrkeyIPu21PQZujeZ6cvnHg0hMp-kJTab4X4rLJpGyb4_yrxiBB-8fyVeDD7rTQ0TSaMuCJqnAdmeWZR3kAMDw82K1zHoxVCHLAb2YZkyq6GIdObE8nKTFCc8qt2lrFgcFM6mCZ2-4gxHxMtjr_wGdv37hvCOx4OQME_yb_sNvdx87-Whw">
-</div>
-<div class="flex-1 flex flex-col justify-between h-full py-2">
-<div>
-<div class="flex items-center gap-2 mb-2">
-<span class="bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-md font-label-sm text-xs">Health</span>
-<span class="text-on-surface-variant font-label-sm text-sm flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">calendar_today</span> Community Wellness Fair</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-background text-2xl mb-2">Community Wellness Fair</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Free health screenings, wellness workshops, and consultations with local, affirming healthcare providers.</p>
-</div>
-<div class="flex gap-3">
-<a class="border-2 border-primary text-primary px-6 py-2 rounded-full font-label-sm text-label-sm hover:bg-surface-variant transition-colors" href="events.html">Learn More</a>
-</div>
-</div>
-</div>
-</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a hidden data-guest-only class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="join.html">Become a Member</a>
+<a hidden data-auth-only class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" href="hub.html">Go to the Member Hub</a>
+<a class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary-fixed-dim text-primary-fixed-dim rounded-full font-label-sm text-label-sm hover:bg-surface-container-lowest/10 transition-colors" href="lovewell.html">How Lovewell works</a>
 </div>
 </div>
 </section>
 
-<!-- Pillar 3: Lovewell -->
-<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
-<div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<div class="order-2 md:order-1 flex flex-col gap-6">
-<div class="flex items-center gap-3 mb-2">
-<span class="material-symbols-outlined text-primary text-4xl" aria-hidden="true">favorite</span>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Lovewell Loyalty</h2>
-</div>
-<p class="font-body-lg text-body-lg text-on-surface-variant">More than just a rewards program. Lovewell connects you to essential healthcare services, exclusive community perks, and a network of care designed specifically for the South Side.</p>
-<div class="flex flex-col gap-4 mt-4">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 relative overflow-hidden flex items-center gap-4">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
-<span class="material-symbols-outlined text-secondary-container text-3xl" aria-hidden="true">medical_services</span>
+<!-- 4. Media & storytelling (stub for the first iteration) -->
+<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="media">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 <div>
-<h4 class="font-headline-md text-headline-md text-on-background text-lg">Priority Healthcare Access</h4>
-<p class="font-body-md text-sm text-on-surface-variant">Book appointments and access telehealth quickly.</p>
-</div>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 relative overflow-hidden flex items-center gap-4">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
-<span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">loyalty</span>
-<div>
-<h4 class="font-headline-md text-headline-md text-on-background text-lg">Shop Rewards</h4>
-<p class="font-body-md text-sm text-on-surface-variant">Earn points on every Buy South Side purchase.</p>
-</div>
-</div>
-</div>
-<div class="mt-6">
-<a class="inline-flex items-center justify-center px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-md" href="lovewell.html">Join Lovewell Today</a>
-</div>
-</div>
-<div class="order-1 md:order-2">
-<div class="aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg relative">
-<img class="w-full h-full object-cover" alt="Community members using a wellness app together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2uCFGCNrlb5b3YHyQqvf8eaQCsCUGjFUM94c8QiFDi1re4KMFhqovGiUsPeudYPjlimqTBp-_g5OO3A8v9lt4X1NxXvo4vqD2mOYoUo2iDFbfvLD339VWM57pTG9y6C1BkA9_TMwa57S-k5wEmGqfjBscxq-fOCWAyDtUUVGwOjzC40BOCLcptJw0WdEFDlqGznyGirimHfqAn7ym3u7rtu61hwx9N9YJSHxLsCePBMmcIvJ33O2d">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Front Porch Media -->
-<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-inverse-surface text-on-primary" id="media">
-<div class="max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-<div>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-surface-bright mb-2">Front Porch Media</h2>
-<p class="font-body-lg text-body-lg text-surface-variant">Our stories, told by us. Sounds and voices from our community.</p>
-</div>
-<a class="inline-flex items-center gap-2 text-primary-fixed-dim hover:text-primary-fixed font-label-sm text-label-sm transition-colors duration-200" href="https://www.instagram.com/pridesouthside/">Follow @PrideSouthSide <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="group relative rounded-xl overflow-hidden aspect-video bg-background">
-<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" alt="An intimate live music performance, Tiny Porch Concert style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJnWPFNyB3rTbsO1EdgdSqB89Q5gOvv3Jpy0ZEHsGNwZ266Ijip6arOIHsH9wE9mW0M-2amAx5fwfC5EbRrQXcPDuoGuEkW4ugr5ssDhD2bWt4aRQc_aH6w0GLSa43qle3-YM1f58_ysctc9wlo-uWLg87lmnAuhxjUbjbblvN28S2uloTylK1DG5nw64w8_kuKWh9tx3h4etheb1ul2lFZL_XubllyYaFDPP1iHSk_Jp6W3q4aj8P">
-<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center">
-<div class="w-16 h-16 bg-primary/90 text-on-primary rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-<span class="material-symbols-outlined text-3xl ml-1" aria-hidden="true">play_arrow</span>
-</div>
-</div>
-<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md font-label-sm text-xs mb-2 inline-block">Tiny Porch Concerts</span>
-<h3 class="font-headline-md text-headline-md text-white text-2xl">Soul Sessions with Local Artists</h3>
-</div>
-</div>
-<div class="flex flex-col justify-between gap-4">
-<div class="flex gap-4 items-center group p-2 rounded-lg hover:bg-surface-container-highest/10 transition-colors">
-<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" alt="A community leader in front of a South Side mural" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-XtwCx4MHVp3VOPpg2ns2mNm6-KX0peTT2pdjuDPkMOUjxdij7MxW3QFLbVubj4i9QgQKQ-xch6LsFvRm_ON4osI08p0IEf548ML-FMktpY2Up2sYA1GK-OaDEvF1gKGG9ED3rcFVULLGEXbvtQZm7VOYmmAcbjdkXdA076K1Hqjq6KSsRT6CcvgmEwzdZoRxds4O71xPdS3NP6xVY88Q7iLuQCAtFKnFVZiNNlNslRDmHDO-ujKY">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-3">The Front Porch Media</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">Community Based Digital Storytelling</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">The Front Porch is a digital front porch where community voices, stories, and experiences can be preserved and shared.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6"><strong>Stories coming soon!</strong></p>
+<a class="inline-flex items-center gap-2 text-primary hover:text-secondary font-label-sm text-label-sm" href="media.html">About The Front Porch <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
 </div>
 <div>
-<h4 class="font-headline-md text-headline-md text-surface-bright text-lg mb-1">Voices of the South Side: Maria's Story</h4>
-<p class="font-body-md text-sm text-surface-variant line-clamp-2">An inspiring journey of community building and grassroots activism.</p>
-</div>
-</div>
-<div class="flex gap-4 items-center group p-2 rounded-lg hover:bg-surface-container-highest/10 transition-colors">
-<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" alt="Freshly prepared food from a local South Side vendor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5T2LqiwfFNmJKaVwEm52FIbXIE3z75UPaFZWnKLYKmibatEL0S5lpzbUlevwuXCk-z9FFe8t9CjaGCLi_BlKiT8YKZvkBgnw55uUDeDswFwYMdJ9-bUTsozXxszo-zIntRKGz9j0jB0jswZvOLMzcz2VdNWArxjSeen587DwxAB97_ue4rN-dkW0Srk76jDyln1kkl8GxQTIhgeGtgQ-PhiY63KhNFWP7FV0c9hD8jUTeywXQyNV_">
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-surface-bright text-lg mb-1">Culinary Spotlight: Taste of Pride</h4>
-<p class="font-body-md text-sm text-surface-variant line-clamp-2">Exploring the diverse flavors brought by our newest food vendors.</p>
-</div>
-</div>
-<div class="flex gap-4 items-center group p-2 rounded-lg hover:bg-surface-container-highest/10 transition-colors">
-<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" alt="An artist working in their studio on a colorful painting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWjfBvlhc9lC42RAAA50dmJ4bnF9NqaWlsJQC0PtTffHvEJuLv0wh0565y4Nyds2Y81J7KeruxKLLKCAQICBJePz9qFd6mV2HKxljX8usrQRj1FTWZ8rvzKv2DRZeipuApoop6JU0faLzBLkDCzFv5yLSx97bzDbC6N3gW5Xo6k_xIxlUxgu0k-xfl0EBiT2xPb3njH708lzbAd7V3KMdUArYtIkgNeDox9Ct0meqe05Kdm_7DEjm1">
-</div>
-<div>
-<h4 class="font-headline-md text-headline-md text-surface-bright text-lg mb-1">Behind the Canvas: Maker Series</h4>
-<p class="font-body-md text-sm text-surface-variant line-clamp-2">Meet the creators crafting the unique items in our Pride Shop.</p>
-</div>
-</div>
+<div class="photo-slot aspect-video w-full rounded-xl border border-dashed border-outline-variant p-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Front Porch storytelling photo — import from pridesouthside.org</span>
 </div>
 </div>
 </div>
 </section>
 
 <!-- Sponsors -->
-<section class="w-full py-16 px-margin-mobile md:px-margin-desktop bg-surface border-t border-outline-variant">
+<section class="w-full py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low border-y border-outline-variant">
 <div class="max-w-container-max mx-auto text-center">
 <p class="font-label-sm text-label-sm text-on-surface-variant mb-8 uppercase tracking-wider">Thanks to our 2026 sponsors &amp; partners</p>
-<div class="flex flex-wrap justify-center gap-x-10 gap-y-4 font-headline-md font-headline-md text-lg text-on-surface-variant">
+<div class="flex flex-wrap justify-center gap-x-10 gap-y-4 font-headline-md text-lg text-on-surface-variant">
 <a class="hover:text-primary transition-colors" href="https://nearnorthhealth.org/locations/">Near North Health</a>
 <a class="hover:text-primary transition-colors" href="https://www.equalityillinois.us/programs/">Equality Illinois</a>
 <a class="hover:text-primary transition-colors" href="https://www.taskforcechicago.org">Taskforce</a>
@@ -359,44 +218,50 @@ tailwind.config = {
 </div>
 </section>
 
-<!-- Mailing List -->
-<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<!-- Mailing list -->
+<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
 <div class="max-w-xl mx-auto text-center">
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-3">Join Our Mailing List</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">Stay in the loop on events, the Pride Shop, and Lovewell — no spam, just South Side love.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Stay in the loop on events, the marketplace, and Lovewell.</p>
 <form class="flex flex-col sm:flex-row gap-3" id="mailing-list-form">
 <label class="sr-only" for="mailing-email">Email address</label>
-<input class="flex-1 px-4 py-3 rounded-full border border-outline-variant bg-surface-container-lowest text-on-background focus:outline-none focus:ring-2 focus:ring-primary" id="mailing-email" name="email" placeholder="Enter your email" required="" type="email">
-<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors duration-200 shadow-md" type="submit">Join</button>
+<input class="field flex-1 rounded-full" id="mailing-email" name="email" placeholder="Enter your email" required type="email">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md" type="submit">Join</button>
 </form>
 <p class="font-body-md text-sm text-on-surface-variant mt-3" id="mailing-list-status" role="status"></p>
 </div>
 </section>
 </main>
 
-<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter bg-inverse-surface text-inverse-on-surface">
-<div class="col-span-1 md:col-span-4 flex flex-col gap-4">
+<script src="assets/js/events-feed.js"></script>
+<script>PSS.wireNewsletter('mailing-list-form', 'mailing-list-status', 'homepage');</script>
+<footer class="w-full bg-inverse-surface text-inverse-on-surface">
+<div class="pride-rule"></div>
+<div class="max-w-container-max mx-auto py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-5 flex flex-col gap-4">
 <span class="text-headline-md font-headline-md font-bold text-surface flex items-center gap-2"><svg class="h-8 w-8 flex-shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="30.1" cy="5.5" r="5" fill="#FFDD19"/><circle cx="14.1" cy="8.1" r="4.6" fill="#FCB042"/><circle cx="5.5" cy="15.7" r="4.5" fill="#ED1C24"/><circle cx="6.2" cy="26.7" r="4.5" fill="#7F4097"/><circle cx="16.9" cy="34.2" r="4.6" fill="#1A75BC"/><circle cx="34.5" cy="34.5" r="4.7" fill="#00A14B"/></svg>Pride South Side</span>
-<p class="font-body-md text-body-md text-surface-variant">Pride South Side is a fiscal program of the Center on Halsted. © 2026 Pride South Side. All rights reserved.</p>
+<p class="font-body-md text-body-md text-surface-variant">Pride South Side is a fiscal program of the Center on Halsted. &copy; 2026 Pride South Side. All rights reserved.</p>
 <div class="flex gap-4">
-<a aria-label="Instagram" class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.instagram.com/pridesouthside/"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></a>
+<a aria-label="Pride South Side on Instagram" class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.instagram.com/pridesouthside/"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span></a>
 </div>
 </div>
-<div class="col-span-1 md:col-span-8 flex flex-wrap gap-8 md:justify-end font-label-sm text-label-sm">
-<a class="text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/faqs">FAQs</a>
-<a class="text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/vendor">Vendor Application</a>
-<a class="text-surface-variant hover:text-secondary-container transition-colors duration-200" href="lovewell.html">Telehealth Portal</a>
-<a class="text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/sponsors">Sponsors</a>
-<a class="text-surface-variant hover:text-secondary-container transition-colors duration-200" href="https://www.pridesouthside.org/submit-your-event">Submit an Event</a>
+<div class="col-span-1 md:col-span-3 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Explore</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html">Events &amp; Community Calendar</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="shop.html">Pride South Side Marketplace</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="lovewell.html">Lovewell Membership</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="media.html">The Front Porch Media</a>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col gap-3 font-label-sm text-label-sm">
+<h2 class="text-surface font-headline-md text-base mb-1">Get involved</h2>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="join.html">Become a Lovewell Member</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="events.html#submit-event">Submit Your Event</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/vendor">Vendor Application</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/sponsors">Sponsors</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/faqs">FAQs</a>
+<a class="text-surface-variant hover:text-secondary-container transition-colors" href="https://www.pridesouthside.org/donate">Donate</a>
+</div>
 </div>
 </footer>
-
-<script>
-document.getElementById('mailing-list-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  document.getElementById('mailing-list-status').textContent = 'Thanks for subscribing! Keep an eye on your inbox for South Side news.';
-  this.reset();
-});
-</script>
 </body>
 </html>
